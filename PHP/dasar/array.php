@@ -43,4 +43,3 @@ $arrayDidalamArray = array(
 
 var_dump($arrayDidalamArray);
 var_dump($arrayDidalamArray["addres"]["City"]);
-var_dump($arrayDidalamArray["addres"]["City"]);
