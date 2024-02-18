@@ -16,3 +16,4 @@ echo "\n";
 
 $resultMOdulo = 100 % 3;
 var_dump($resultMOdulo);
+echo $resultNegatif;
