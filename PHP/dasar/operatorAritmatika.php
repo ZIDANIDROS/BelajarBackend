@@ -10,3 +10,9 @@ echo "\n";
 $resultNegatif = -$result;
 var_dump($resultNegatif);
 echo $resultNegatif;
+
+echo "\n";
+echo "\n";
+
+$resultMOdulo = 100 % 3;
+var_dump($resultMOdulo);
