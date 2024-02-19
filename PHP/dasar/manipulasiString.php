@@ -24,5 +24,10 @@ echo $name[2] . PHP_EOL;
 echo $name[3] . PHP_EOL;
 echo $name[4] . PHP_EOL;
 echo $name[5] . PHP_EOL;
+echo PHP_EOL;
 
 //variable Parsing
+echo "Hello $name, selamat belajar " . PHP_EOL;
+
+//curly brace
+echo "{$name}'s book " . PHP_EOL;//ingin menambahkan value variable di samping variable
