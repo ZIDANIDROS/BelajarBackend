@@ -8,5 +8,8 @@ $second = [
     "second name" => "tayo"
 ];
 
-$full = $first + $last;
-var_dump($first);
+$full = $first + $second;
+var_dump($full);
+foreach ($full as $fullz => $value) {
+    echo $fullz . ": " . $value . "\n";
+}
