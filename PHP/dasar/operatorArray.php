@@ -27,4 +27,13 @@ $b = [
 ];
 
 var_dump($a == $b);
-echo $a == $b;
+
+//function expresion
+function runApp($name)
+{
+    echo "start Program" . PHP_EOL;
+    echo "Hello $name" . PHP_EOL;
+    echo "end Program" . PHP_EOL;
+}
+
+runApp("husein");
