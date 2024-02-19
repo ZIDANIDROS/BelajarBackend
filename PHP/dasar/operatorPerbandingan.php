@@ -18,3 +18,9 @@ echo "\n";
 $c = $a === $b;
 var_dump($c); //false
 echo $c;
+
+$a = 10;
+$b = $a++;
+
+var_dump($a);
+var_dump($b);
