@@ -1,5 +1,6 @@
 <?php
 
+//mengguanakan if else dan isset
 $data = [];
 
 if (isset($data['action'])) {
@@ -19,5 +20,11 @@ if (isset($data['action'])) {
 } else {
     $action = 'nothing';
 }
+
+echo $action . PHP_EOL;
+
+//menggunakan nullCoalescing
+$data = [];
+$action = $data["action"] ?? "nothing";
 
 echo $action . PHP_EOL;
