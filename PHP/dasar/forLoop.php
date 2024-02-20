@@ -1,5 +1,8 @@
 <?php
 
 for ($i = 0; $i < 10; $i++) {
-    echo "i yang ke-$i" . PHP_EOL;
+    for ($j = 0; $j <= $i; $j++) {
+        echo "*";
+    }
+    echo PHP_EOL;
 }
