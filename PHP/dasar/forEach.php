@@ -2,6 +2,7 @@
 
 $names = ["Husein", "Zidan", "Alaydrus"];
 
+echo "\n";
 for ($i = 0; $i < count($names); $i++) {
     echo "Hello mas $names[$i]" . PHP_EOL;
 }
