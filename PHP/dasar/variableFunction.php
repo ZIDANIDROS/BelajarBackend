@@ -20,6 +20,7 @@ function sampleFunction(string $name): string
     return "Sample $name";
 }
 
+//string sampleFunction akan menjadi function di sayHello();
 sayHello("Husein", "sampleFunction");
 
 sayHello("Husein", "strtoupper");
