@@ -1,9 +1,9 @@
 <?php
 
 #default parameter
-function sayHello($nama = "tayo",)
+function sayHello($namas, $nama = "tayo",)
 {
-    echo "Hello $nama" . PHP_EOL;
+    echo "Hello $nama $namas" . PHP_EOL;
 }
 
-sayHello("Husein");
+sayHello("", "HUA");
