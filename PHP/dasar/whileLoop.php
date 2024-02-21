@@ -13,3 +13,11 @@ do {
     echo "Hello world : $counter2\n";
     $counter2++;
 } while ($counter2 <= 10);
+
+echo "\n";
+for ($i = 0; $i < 100; $i++) {
+    if ($i % 2 == 0) {
+        continue;
+    }
+    echo "Hello World : " . $i . PHP_EOL;
+}
