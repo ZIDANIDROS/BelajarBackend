@@ -25,4 +25,5 @@ $lastName = "Zidan";
 $sayHelloHusein = function () use ($firstName, $lastName) {
     echo "Hello $firstName $lastName" . PHP_EOL;
 };
+
 $sayHelloHusein();
