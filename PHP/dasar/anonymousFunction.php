@@ -6,3 +6,13 @@ $sayHello = function (string $name) {
 
 $sayHello("Husein");
 $sayHello("Zidan");
+
+function sayGoodBye(string $name, $filter)
+{
+    $finalName = $filter($name);
+    echo "Good bye $finalName" . PHP_EOL;
+}
+
+sayGoodBye("Husein", function (string $name): string {
+    return strtoupper($name);
+});
