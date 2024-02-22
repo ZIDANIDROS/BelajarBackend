@@ -16,3 +16,13 @@ function sayGoodBye(string $name, $filter)
 sayGoodBye("Husein", function (string $name): string {
     return strtoupper($name);
 });
+
+//mengakses variable dari luar
+$firstName = "Husein";
+$lastName = "Zidan";
+
+#menggunakan "use" karena ingin mengakses variable dari luar
+$sayHelloHusein = function () use ($firstName, $lastName) {
+    echo "Hello $firstName $lastName" . PHP_EOL;
+};
+$sayHelloHusein();
