@@ -36,8 +36,12 @@ do {
             $boolIF = readline();
         } while ($boolIF == 'y' || $boolIF == 'Y');
     } elseif ($inputan == 2) {
-        echo "Masukan pilihan yang ingin dihapuskan  : " . $index = readline() . PHP_EOL;
-        unset($todolist[$index]);
+        do {
+            echo "Masukan list yang ingin dihapus : ";
+            unset($todolist[$index]);
+            echo "apakah ingin menghapus lagi ?(y/n) ";
+            $boolIF = readline();
+        } while ($boolIF == 'y' || $boolIF == 'Y');
     } else {
         break;
     }
