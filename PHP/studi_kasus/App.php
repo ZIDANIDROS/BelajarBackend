@@ -5,7 +5,8 @@ $todolist = [];
 $memilih = [
     1 => "Tambah",
     2 => "Delet",
-    3 => "Keluar"
+    3 => "Rename",
+    4 => "Keluar"
 ];
 
 
