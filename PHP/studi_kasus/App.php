@@ -38,6 +38,7 @@ do {
     } elseif ($inputan == 2) {
         do {
             echo "Masukan list yang ingin dihapus : ";
+            $index = (int) readline();
             unset($todolist[$index]);
             echo "apakah ingin menghapus lagi ?(y/n) ";
             $boolIF = readline();
