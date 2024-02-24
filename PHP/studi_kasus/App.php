@@ -21,7 +21,7 @@ foreach ($memilih as $key) {
     echo $key . PHP_EOL;
 }
 
-echo "Masukan pilihan : " . $inputan = readline() . PHP_EOL;
+echo "Masukan pilihan : " . $inputan = (int)readline() . PHP_EOL;
 
 if ($inputan == 1) {
     echo "Masukan pilihan yang ingin ditambahkan : " . $todolist[] = readline() . PHP_EOL;
