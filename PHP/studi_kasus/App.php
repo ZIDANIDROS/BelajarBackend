@@ -1,8 +1,6 @@
 <?php
 
-$todolist = [
-    "Membaca", "membuat course", "makan siang"
-];
+$todolist = [];
 
 $memilih = [
     1 => "Tambah",
