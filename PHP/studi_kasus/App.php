@@ -17,8 +17,8 @@ do {
     echo "\033[2J\033[;H";
     echo "TODO LIST" . PHP_EOL;
     echo "list harian" . PHP_EOL;
-    foreach ($todolist as $key => $lawak) {
-        echo "$key. $lawak" . PHP_EOL;
+    for ($i = 1; $i <= count($todolist); $i++) {
+        echo "$i. " . $todolist[$i] . PHP_EOL;
     }
     echo "\n\n";
     foreach ($memilih as $key) {
@@ -49,8 +49,8 @@ do {
     }
 
     echo "\n\n";
-    foreach ($todolist as $key => $lawak) {
-        echo "$key. $lawak" . PHP_EOL;
+    for ($i = 1; $i <= count($todolist); $i++) {
+        echo "$i. " . $todolist[$i] . PHP_EOL;
     }
     echo "apakah ingin kembali ke menu ?(y/n) ";
     $boolMENU = readline();
