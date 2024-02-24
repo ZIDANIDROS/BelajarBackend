@@ -8,7 +8,8 @@ $todolist = [
 
 $memilih = [
     1 => "Tambah",
-    2 => "Delet"
+    2 => "Delet",
+    3 => "Keluar"
 ];
 
 
@@ -24,16 +25,22 @@ do {
     }
 
     echo "Masukan pilihan : ";
-    $newTask = readline();
-    $todolist[] = $newTask;
+    $inputan = readline();
+    $memilih[] = $inputan;
 
     if ($inputan == 1) {
-        echo "Masukan pilihan yang ingin ditambahkan : " . $todolist[] = readline() . PHP_EOL;
-    } else {
+        do {
+            echo "Masukan list yang ingin ditambahkan : ";
+            $todolist[] = readline() . PHP_EOL;
+        } while ($a <= 10);
+    } elseif ($inputan == 2) {
         echo "Masukan pilihan yang ingin dihapuskan  : " . $index = readline() . PHP_EOL;
         unset($todolist[$index]);
+    } else {
+        break;
     }
 
+    echo "\n\n";
     foreach ($todolist as $key => $lawak) {
         echo "$key. $lawak" . PHP_EOL;
     }
