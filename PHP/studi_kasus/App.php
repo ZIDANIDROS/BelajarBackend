@@ -16,7 +16,7 @@ do {
     echo "TODO LIST" . PHP_EOL;
     echo "list harian" . PHP_EOL;
     foreach ($todolist as $key => $lawak) {
-        echo "$key. $lawak" . PHP_EOL;
+        echo $key + 1 . "." . $lawak . PHP_EOL;
     }
     echo "\n\n";
     foreach ($memilih as $key) {
