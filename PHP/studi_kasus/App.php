@@ -31,8 +31,10 @@ do {
     if ($inputan == 1) {
         do {
             echo "Masukan list yang ingin ditambahkan : ";
-            $todolist[] = readline() . PHP_EOL;
-        } while ($a <= 10);
+            $todolist[] = (int)readline() . PHP_EOL;
+            echo "apakah ingin menambah lagi ?(y/n) ";
+            $inputanif = readline() . PHP_EOL;
+        } while ($inputanif == 'y' || 'Y');
     } elseif ($inputan == 2) {
         echo "Masukan pilihan yang ingin dihapuskan  : " . $index = readline() . PHP_EOL;
         unset($todolist[$index]);
@@ -42,6 +44,6 @@ do {
 
     echo "\n\n";
     foreach ($todolist as $key => $lawak) {
-        echo "$key. $lawak" . PHP_EOL;
+        echo $key + 1 . "." . $lawak . PHP_EOL;
     }
 } while ($a == 1);
