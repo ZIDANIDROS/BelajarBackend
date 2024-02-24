@@ -14,7 +14,7 @@ echo "\n\n";
 
 $memilih = [
     1 => "Tambah",
-    2 => "Mengurangi"
+    2 => "Delet"
 ];
 
 foreach ($memilih as $key) {
@@ -24,6 +24,8 @@ foreach ($memilih as $key) {
 echo "Masukan pilihan : " . $inputan = readline() . PHP_EOL;
 
 if ($inputan == 1) {
+    echo "Masukan pilihan yang ingin ditambahkan : " . $todolist[] = readline() . PHP_EOL;
 } else {
-    # code...
+    echo "Masukan pilihan yang ingin dihapuskan  : " . $index = readline() . PHP_EOL;
+    unset($todolist[$index]);
 }
