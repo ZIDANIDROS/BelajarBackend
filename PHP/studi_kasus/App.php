@@ -40,7 +40,7 @@ do {
             $index = $CMD - 1;
             if (isset($todolist[$index])) {
                 unset($todolist[$index]);
-                for ($i = 0; $i < $todolist; $i++) {
+                for ($i = 0; $i < count($todolist); $i++) {
                     if ($todolist[$i] == null) {
                         $todolist[$i] = $todolist[$i + 1];
                     }
