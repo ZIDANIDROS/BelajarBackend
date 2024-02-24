@@ -10,7 +10,18 @@ foreach ($todolist as $key => $lawak) {
     echo "$key. $lawak" . PHP_EOL;
 }
 
-$inputan = readline();
+echo "\n\n";
+
+$memilih = [
+    1 => "Tambah",
+    2 => "Mengurangi"
+];
+
+foreach ($memilih as $key) {
+    echo $key . PHP_EOL;
+}
+
+echo "Masukan pilihan : " . $inputan = readline() . PHP_EOL;
 
 if ($inputan == 1) {
 } else {
