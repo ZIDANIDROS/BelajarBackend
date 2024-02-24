@@ -40,11 +40,7 @@ do {
             $index = $CMD - 1;
             if (isset($todolist[$index])) {
                 unset($todolist[$index]);
-                for ($i = 0; $i < count($todolist); $i++) {
-                    if ($todolist[$i] == null) {
-                        $todolist[$i] = $todolist[$i + 1];
-                    }
-                }
+                $todolist = array_values($todolist);
             } else {
                 echo "Nomor indeks tidak valid!" . PHP_EOL;
             }
