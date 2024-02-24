@@ -1,9 +1,9 @@
 <?php
 
 $todolist = [
-    1 => "Membaca",
-    2 => "membuat course",
-    3 => "makan siang"
+    "Membaca",
+    "membuat course",
+    "makan siang"
 ];
 
 $memilih = [
