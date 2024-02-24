@@ -1,9 +1,9 @@
 <?php
 
 $todolist = [
-    1 => "Membaca",
-    2 => "membuat course",
-    3 => "makan siang"
+    0 => "Membaca",
+    1 => "membuat course",
+    2 => "makan siang"
 ];
 
 foreach ($todolist as $key => $lawak) {
@@ -28,4 +28,8 @@ if ($inputan == 1) {
 } else {
     echo "Masukan pilihan yang ingin dihapuskan  : " . $index = readline() . PHP_EOL;
     unset($todolist[$index]);
+}
+
+foreach ($todolist as $key => $lawak) {
+    echo "$key. $lawak" . PHP_EOL;
 }
