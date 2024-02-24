@@ -14,6 +14,7 @@ $memilih = [
 
 
 do {
+    echo "\033[2J\033[;H";
     echo "TODO LIST" . PHP_EOL;
     echo "list harian" . PHP_EOL;
     foreach ($todolist as $key => $lawak) {
