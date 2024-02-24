@@ -6,3 +6,5 @@ var_dump(strtolower("Husein Zidan Alaydrus"));
 var_dump(strtoupper("Husein Zidan Alaydrus"));
 var_dump(substr("Husein Zidan Alaydrus", 0, 21));
 var_dump(trim("               Husein ZIDAN                  "));
+$h = "Husein Zidan Alaydrus";
+echo strlen($h);

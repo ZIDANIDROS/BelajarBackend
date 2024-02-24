@@ -46,6 +46,17 @@ do {
             echo "apakah ingin menghapus lagi ?(y/n) ";
             $boolIF = readline();
         } while ($boolIF == 'y' || $boolIF == 'Y');
+    } elseif ($inputan == 3) {
+        echo "Masukan nomor yang ingin direname : ";
+        $CMD = (int) readline();
+        $index = $CMD - 1;
+        if (isset($todolist[$index])) {
+            echo "Masukan list yang baru :";
+            $renameList = (string) readline();
+            $todolist[$index] = $renameList;
+        } else {
+            echo "Empty" . PHP_EOL;
+        }
     } else {
         echo "Terima kasih telah menggunakan program. Sampai jumpa!";
         break;
