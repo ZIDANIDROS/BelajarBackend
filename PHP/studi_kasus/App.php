@@ -31,7 +31,7 @@ do {
     if ($inputan == 1) {
         do {
             echo "Masukan list yang ingin ditambahkan : ";
-            $todolist[] = (int)readline() . PHP_EOL;
+            $todolist[] = (int)readline();
             echo "apakah ingin menambah lagi ?(y/n) ";
             $boolIF = readline();
         } while ($boolIF == 'y' || $boolIF == 'Y');
