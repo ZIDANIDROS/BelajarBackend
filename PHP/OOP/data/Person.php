@@ -2,7 +2,7 @@
 
 class Person
 {
-    var $name;
-    var $gender;
-    var $country;
+    var string $name;
+    var ?string $gender = null; //nulable = bisa/noleh null
+    var string $country;
 }
