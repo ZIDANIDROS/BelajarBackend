@@ -7,6 +7,11 @@ class Person
     var ?string $gender; //nulable = bisa/noleh null
     var string $country;
 
+    public function __construct(string $name, ?string $gender)
+    {
+        $this->name = $name;
+        $this->gender = $gender;
+    }
     function sayHello(?string $name)
     {
         if (is_null($name)) {
@@ -19,11 +24,5 @@ class Person
     function info()
     {
         echo "Author : " . self::AUTHOR . PHP_EOL;
-    }
-
-    public function __HuseinConstruct(string $name, ?string $gender)
-    {
-        $this->name = $name;
-        $this->gender = $gender;
     }
 }
