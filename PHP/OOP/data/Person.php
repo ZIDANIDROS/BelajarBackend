@@ -2,6 +2,7 @@
 
 class Person
 {
+    const AUTHOR = "PZN";
     var string $name;
     var ?string $gender; //nulable = bisa/noleh null
     var string $country;
