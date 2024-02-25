@@ -4,5 +4,5 @@ class Person
 {
     var $name;
     var $gender;
-    var $cuntry;
+    var $country;
 }
