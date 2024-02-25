@@ -20,4 +20,10 @@ class Person
     {
         echo "Author : " . self::AUTHOR . PHP_EOL;
     }
+
+    public function __HuseinConstruct(string $name, ?string $gender)
+    {
+        $this->name = $name;
+        $this->gender = $gender;
+    }
 }
