@@ -12,19 +12,19 @@ class Manager
     }
     function sayHello(string $name): void
     {
-        echo "Hi $name, my name is $this->name sebagai Manager" . PHP_EOL;
+        echo "Hi $name, my name is $this->name sebagai $this->title" . PHP_EOL;
     }
 }
 
 class vicePresident extends Manager
 {
-    function  __construct(string $name)
+    function  __construct(string $name = "")
     {
         parent::__construct($name, "VP");
     }
 
     function sayHello(string $name): void
     {
-        echo "Hi $name, my name is $this->name sebagai VP" . PHP_EOL;
+        echo "Hi $name, my name is $this->name sebagai $this->title" . PHP_EOL;
     }
 }
