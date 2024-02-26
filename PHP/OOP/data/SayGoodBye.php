@@ -51,7 +51,10 @@ class parentPerson
 
 class Person extends parentPerson
 {
-    use SayGoodBye, SayHello, HasName, canRun;
+    use SayGoodBye, SayHello, HasName, canRun {
+        // hello as private;
+        // goodBye as private;
+    }
 
     public function run(): void
     {
