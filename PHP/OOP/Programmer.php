@@ -24,5 +24,12 @@ class Company
 
 function sayHelloProgrammer(Programmer $programmer)
 {
-    echo "Hello Programmer $programmer->name" . PHP_EOL;
+
+    if ($programmer instanceof backendProgrammer) {
+        echo "Hello backendProgrammer $programmer->name" . PHP_EOL;
+    } elseif ($programmer instanceof frontendProgrammer) {
+        echo "Hello frontendProgrammer $programmer->name" . PHP_EOL;
+    } elseif ($programmer instanceof Programmer) {
+        echo "Hello Programmer $programmer->name" . PHP_EOL;
+    }
 }
