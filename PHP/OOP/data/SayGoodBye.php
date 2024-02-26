@@ -31,7 +31,17 @@ trait HasName
     public string $name;
 }
 
+trait canRun
+{
+    public abstract function run(): void;
+}
+
 class Person
 {
-    use SayGoodBye, SayHello, HasName;
+    use SayGoodBye, SayHello, HasName, canRun;
+
+    public function run(): void
+    {
+        echo "Person {$this->name} is running" . PHP_EOL;
+    }
 }

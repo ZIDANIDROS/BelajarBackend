@@ -2,6 +2,9 @@
 
 namespace Data;
 
+use Data\traits\HasName;
+use Data\traits\SayGoodBye;
+use Data\traits\SayHello;
 
 interface Hasbrand
 {
