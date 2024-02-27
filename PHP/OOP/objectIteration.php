@@ -1,5 +1,5 @@
 <?php
-
+/*
 class Data implements IteratorAggregate
 {
     var string $first = "first";
@@ -25,3 +25,4 @@ $data = new Data();
 foreach ($data as $key => $value) {
     echo "$property : $value" . PHP_EOL;
 }
+*/
