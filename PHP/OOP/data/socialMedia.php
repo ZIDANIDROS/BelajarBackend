@@ -5,10 +5,19 @@ class SocialMedia
     public string $name;
 }
 
-final class facebook extends SocialMedia
+class facebook extends SocialMedia
 {
+    final public function login(string $username, string $password): bool
+    {
+        return true;
+    }
 }
 
-// class Wa extends facebook //error karena parent sudah final
-// {
-// }
+class Wa extends facebook
+{
+    // error karena final
+    // public function login(string $username, string $password): bool
+    // {
+    //     return true;
+    // }
+}
