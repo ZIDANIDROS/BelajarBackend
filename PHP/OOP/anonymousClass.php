@@ -6,11 +6,18 @@ interface HelloWorld
 }
 
 
-$helloWorld = new class implements HelloWorld
+$helloWorld = new class("Eko") implements HelloWorld
 {
+    public string $name;
+
+    public function __construct(string $name)
+    {
+        $this->name = $name;
+    }
+
     public function sayHello(): void
     {
-        echo "Hello World\n";
+        echo "Hello $this->name \n";
     }
 };
 
