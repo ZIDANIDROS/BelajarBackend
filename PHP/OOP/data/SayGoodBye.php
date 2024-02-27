@@ -49,8 +49,17 @@ class parentPerson
     }
 }
 
+trait ALL
+{
+    use SayGoodBye, SayHello, HasName, canRun {
+    }
+}
+
 class Person extends parentPerson
 {
+
+    use ALL;
+
     use SayGoodBye, SayHello, HasName, canRun {
         // hello as private;
         // goodBye as private;
