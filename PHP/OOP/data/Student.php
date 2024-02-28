@@ -11,4 +11,11 @@ class Student
     {
         return "Student id : $this->id, name : $this->name, Value : $this->value";
     }
+
+    //magicalFunction "__invoke"
+    public function __invoke(...$arguments)
+    {
+        $join = join(",", $arguments);
+        echo "Invoice Student with arguments $join" . PHP_EOL;
+    }
 }
