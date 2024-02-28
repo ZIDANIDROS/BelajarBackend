@@ -15,7 +15,7 @@ class Student
     //magicalFunction "__invoke"
     public function __invoke(...$arguments)
     {
-        $join = join(",", $arguments);
+        $join = join("\n", $arguments);
         echo "Invoice Student with arguments $join" . PHP_EOL;
     }
 }

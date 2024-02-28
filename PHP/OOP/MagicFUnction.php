@@ -9,3 +9,5 @@ $student1->value = 100;
 
 $string = (string) $student1;
 echo $string . PHP_EOL;
+
+$student1(1, "Husein", true, "Manusia");
