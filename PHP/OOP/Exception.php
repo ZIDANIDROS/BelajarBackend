@@ -5,8 +5,8 @@ require_once "data/loginRequest.php";
 require_once "helper/Validation.php";
 
 $loginRequest = new LoginRequest();
-$loginRequest->username = " ";
-$loginRequest->password = " ";
+$loginRequest->username = "Husein";
+$loginRequest->password = "zidan";
 try {
     validateLoginRequest($loginRequest);
 } catch (ValidationException | Exception $exception) {
