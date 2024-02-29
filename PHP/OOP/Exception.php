@@ -11,5 +11,7 @@ try {
     validateLoginRequest($loginRequest);
 } catch (ValidationException $exception) {
     echo "Validation error : {$exception->getMessage()}" . PHP_EOL;
+} catch (Exception $exception) {
+    echo "Validation error : {$exception->getMessage()}" . PHP_EOL;
 }
 echo "Valid" . PHP_EOL;
