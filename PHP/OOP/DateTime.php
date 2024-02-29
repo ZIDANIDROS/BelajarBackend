@@ -12,3 +12,7 @@ $dateInterval->invert = true; //merubah date
 $dateTime->add($dateInterval);
 
 var_dump($dateTime);
+
+$now = new DateTime();
+var_dump($now);
+$now->setTimezone(new DateTimeZone("Asia/Gaza"));
