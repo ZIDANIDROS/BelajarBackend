@@ -15,4 +15,4 @@ var_dump($dateTime);
 
 $now = new DateTime();
 var_dump($now);
-$now->setTimezone(new DateTimeZone("Asia/Gaza"));
+$now->setTimezone(new DateTimeZone("Asia/Jakarta"));
