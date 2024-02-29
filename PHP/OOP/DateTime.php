@@ -7,7 +7,7 @@ $dateTime->setTime(12, 12, 12);
 $dateTime->add(new DateInterval("P1Y"));
 
 $dateInterval = new DateInterval("P1M");
-$dateInterval->invert = 2; //merubah date
+$dateInterval->invert = true; //merubah date
 
 $dateTime->add($dateInterval);
 
