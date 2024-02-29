@@ -1,12 +1,13 @@
 <?php
 
+require_once "data/Food.php";
 require_once "data/Animal.php";
 require_once "data/AnimalShelter.php";
 
 $catShelter = new \Data\CatShelter();
 $cat = $catShelter->adopt("Tayo");
-var_dump($cat);
+$cat->eat(new \Data\AnimalFood());
 
 $dogtShelter = new \Data\DogShelter();
 $dog = $dogtShelter->adopt("Busa");
-var_dump($dog);
+$dog->eat(new \Data\Food());
