@@ -11,5 +11,7 @@ try {
     validateLoginRequest($loginRequest);
 } catch (ValidationException | Exception $exception) {
     echo "Validation error : {$exception->getMessage()}" . PHP_EOL;
+} finally {
+    echo "Error gak error, tetap dipanggil" .  PHP_EOL;
 }
 echo "Valid" . PHP_EOL;
