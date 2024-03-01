@@ -8,3 +8,6 @@ var_dump($matches);
 //menangani kata-kata kasar
 $result = preg_replace("/anjing|bangsat/i", "***", "dasar lu anak bangsat");
 var_export($result);
+
+// $result = preg_split("/[\s,-]", "Husein Zidan Alaydrus , makan");
+// var_dump($result);
