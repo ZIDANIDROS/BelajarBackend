@@ -31,8 +31,3 @@ function validateNotBlank(ReflectionProperty $property, object $object): void
             throw new Exception("Property $property->name is null");
     }
 }
-
-$request = new LoginRequest();
-$request->username = "Husein";
-$request->password = null;
-validate($request);
