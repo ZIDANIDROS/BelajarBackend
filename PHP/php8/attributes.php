@@ -8,8 +8,8 @@ class NotBlank
 class LoginRequest
 {
     #[NotBlank]
-    public string $username;
-    public string $password;
+    public ?string $username;
+    public ?string $password;
 }
 
 function validate(object $object): void
@@ -33,4 +33,6 @@ function validateNotBlank(ReflectionProperty $property, object $object): void
 }
 
 $request = new LoginRequest();
+$request->username = "Husein";
+$request->password = null;
 validate($request);
