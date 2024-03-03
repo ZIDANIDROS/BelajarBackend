@@ -17,12 +17,29 @@ class Lenght
     }
 }
 
+function validateLenght(ReflectionProperty $property, object $object): void
+{
+    if (!$property->isInitialized($object) || $property->getValue($object) == null)
+        return;
+
+    $value = $property->getValue($object);
+    $attributes = $property->getAttributes(Lenght::class);
+    foreach ($attributes as $attribute) {
+        $Lenght = $attribute->newInstance();
+        if (strlen($value) < $Lenght->min)
+            throw new Exception("Property $property->name size is too short");
+        if (strlen($value) < $Lenght->max)
+            throw new Exception("Property $property->name size is too long");
+    }
+}
+
 class LoginRequest
 {
     #[Lenght(min: 4, max: 10)]
     #[NotBlank]
     public ?string $username;
     #[NotBlank]
+    #[Lenght(min: 8, max: 10)]
     public ?string $password;
 }
 
