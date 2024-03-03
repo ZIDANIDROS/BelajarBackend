@@ -21,3 +21,11 @@ $result = match (true) {
     default => "E"
 };
 echo "Nilai $value, $result" . PHP_EOL;
+
+// match expression dengan kondisi
+$name = "Mr. Husien";
+$result = match (true) {
+    str_contains($name, "Mr.") => "Hello Sir",
+    str_contains($name, "Mrs.") => "Hello Mam",
+    default => "Hello"
+};
