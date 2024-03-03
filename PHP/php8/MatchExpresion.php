@@ -8,5 +8,16 @@ $result = match ($value) {
     "E" => "Anda salah jurusan",
     default => "Anda salah jurusan"
 };
+echo $result . PHP_EOL;
 
-echo $result;
+//match expression non equals
+$value = "A";
+$result = match (true) {
+    //  (kondisi) => outputnya
+    $value >= 80 => "A",
+    $value >= 70 => "B",
+    $value >= 60 => "C",
+    $value >= 50 => "D",
+    default => "E"
+};
+echo "Nilai $value, $result" . PHP_EOL;
