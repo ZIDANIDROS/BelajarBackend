@@ -8,8 +8,6 @@ class Product
 
 $product = new Product("1", "AHAHA", 15000);
 
-
-
 // cara lama
 // class Product
 // {
