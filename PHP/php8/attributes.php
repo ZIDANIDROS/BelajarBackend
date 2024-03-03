@@ -5,10 +5,21 @@ class NotBlank
 {
 }
 
-
+#[Attribute(Attribute::TARGET_PROPERTY)]
+class Lenght
+{
+    public int $min;
+    public int $max;
+    public function __construct(int $min, int $max)
+    {
+        $this->min = $min;
+        $this->max = $max;
+    }
+}
 
 class LoginRequest
 {
+    #[Lenght(min: 4, max: 10)]
     #[NotBlank]
     public ?string $username;
     #[NotBlank]
