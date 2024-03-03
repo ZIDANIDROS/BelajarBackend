@@ -1,14 +1,17 @@
 <?php
 
-#[Attribute]
+#[Attribute(Attribute::TARGET_CLASS | Attribute::TARGET_CLASS)]
 class NotBlank
 {
 }
+
+
 
 class LoginRequest
 {
     #[NotBlank]
     public ?string $username;
+    #[NotBlank]
     public ?string $password;
 }
 
@@ -34,5 +37,5 @@ function validateNotBlank(ReflectionProperty $property, object $object): void
 
 $request = new LoginRequest();
 $request->username = "Husein";
-$request->password = null;
+$request->password = "rahasia";
 validate($request);
