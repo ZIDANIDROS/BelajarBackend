@@ -49,6 +49,7 @@ function validate(object $object): void
     $properties = $class->getProperties();
     foreach ($properties as $property) {
         validateNotBlank($property, $object);
+        validateLenght($property, $object);
     }
 }
 
