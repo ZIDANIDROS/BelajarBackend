@@ -9,3 +9,7 @@ function sum(int ...$values)
 }
 
 sayHello("eko", "Husein",); //boleh ada koma di parameter terakhir
+
+$array = [
+    "firts" => "Husein",
+];//array juga boleh
