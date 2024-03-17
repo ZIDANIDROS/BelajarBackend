@@ -23,6 +23,7 @@ namespace Repository {
 
         function remove(int $number): bool
         {
+            return false;
         }
 
         function findAll(): array

@@ -15,7 +15,7 @@ namespace Service {
     {
         private TodolistService $todolistRepository;
 
-        public function __cunstruct(TodolistRepository $todolistRepository)
+        public function __construct(TodolistRepository $todolistRepository)
         {
             $this->todolistRepository = $todolistRepository;
         }
@@ -23,12 +23,14 @@ namespace Service {
         {
             echo "TODOLIST" . PHP_EOL;
             $todolist = $this->todolistRepository->findAll();
-            foreach ($this->todolistRepository->findAll() as $number => $value) {
-                echo "$number . $value" . PHP_EOL;
+            foreach ($todolist as $number => $value) {
+                echo "$number . " . $value->getTodo() . PHP_EOL;
             }
         }
         function addTodolist(string $todo): void
         {
+            $todolist = new Todolist($todo);
+            $this->todolistRepository->save($todolist);
         }
         function removeTodolist(int $number): void
         {
