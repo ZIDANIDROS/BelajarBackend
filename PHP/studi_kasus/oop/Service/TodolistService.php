@@ -9,9 +9,9 @@ namespace Service {
         function removeTodolist(int $number): void;
     }
 
-    class TodolistRepositoryImpl implements TodolistService
+    class TodolistServiceImpl implements TodolistService
     {
-        private TodolistRepository $todolistRepository;
+        private TodolistService $todolistRepository;
 
         public function __cunstruct(TodolistRepository $todolistRepository){
             $this->todolistRepository = $todolistRepository;
