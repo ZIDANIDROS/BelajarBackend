@@ -1,7 +1,9 @@
 <?php
 
 namespace Service {
+
     use Repository\TodolistRepository;
+
     interface TodolistService
     {
         function showTodolist(): void;
@@ -13,10 +15,10 @@ namespace Service {
     {
         private TodolistService $todolistRepository;
 
-        public function __cunstruct(TodolistRepository $todolistRepository){
+        public function __cunstruct(TodolistRepository $todolistRepository)
+        {
             $this->todolistRepository = $todolistRepository;
         }
-        private TodolistRepository
         function showTodolist(): void
         {
             echo "TODOLIST" . PHP_EOL;
