@@ -34,6 +34,11 @@ namespace Service {
         }
         function removeTodolist(int $number): void
         {
+            if ($this->todolistRepository->remove($number)) {
+                echo "Sukses menghapus todolist";
+            } else {
+                echo "Gagal menghapus todolist";
+            }
         }
     }
 }
