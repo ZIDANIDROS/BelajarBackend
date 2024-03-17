@@ -17,7 +17,6 @@ namespace Repository {
 
         function save(Todolist $todolist): void
         {
-            $this->todolist[] = $todolist;
         }
 
         function remove(int $number): bool
