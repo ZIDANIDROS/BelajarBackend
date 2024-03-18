@@ -21,16 +21,24 @@ namespace Repository {
             $this->todolist[$number] = $todolist;
         }
 
+
         function remove(int $number): bool
         {
-            if ($number > sizeof($this->todolist)) {
+            if ($number < 1 || $number > count($this->todolist)) {
                 return false;
             }
 
-            array_splice($this->todolist, $number, 1);
+            unset($this->todolist[$number]);
+
+            $this->todolist = array_values($this->todolist);
+
+            $this->todolist = array_combine(range(1, count($this->todolist)), array_values($this->todolist));
 
             return true;
         }
+
+
+
 
         function findAll(): array
         {
