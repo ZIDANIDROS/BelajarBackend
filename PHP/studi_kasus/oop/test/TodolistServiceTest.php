@@ -47,4 +47,4 @@ function testRemoveTodolist(): void
     $todolistService->showTodolist();
 }
 
-testShowTodolist();
+testRemoveTodolist();
