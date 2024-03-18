@@ -3,7 +3,6 @@
 namespace Service {
 
     use Repository\TodolistRepository;
-    use Entity\Todolist;
 
     interface TodolistService
     {

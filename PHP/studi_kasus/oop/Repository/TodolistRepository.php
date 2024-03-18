@@ -27,11 +27,7 @@ namespace Repository {
                 return false;
             }
 
-            for ($i = $number; $i < sizeof($this->todolist); $i++) {
-                $this->todolist[$i] = $this->todolist[$i + 1];
-            }
-
-            unset($this->todolist[sizeof($this->todolist)]);
+            array_splice($this->todolist, $number, 1);
 
             return true;
         }
