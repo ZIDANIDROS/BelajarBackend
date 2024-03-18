@@ -3,6 +3,7 @@
 namespace Service {
 
     use Repository\TodolistRepository;
+    use Entity\Todolist;
 
     interface TodolistService
     {
@@ -13,7 +14,7 @@ namespace Service {
 
     class TodolistServiceImpl implements TodolistService
     {
-        private TodolistService $todolistRepository;
+        private TodolistRepository $todolistRepository;
 
         public function __construct(TodolistRepository $todolistRepository)
         {
