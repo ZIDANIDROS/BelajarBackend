@@ -26,15 +26,13 @@ namespace View {
                 $pilihan = InputHelper::input("pilih");
 
                 if ($pilihan == 1) {
-                    // $todo = InputHelper::input("Masukkan Todo: ");
-                    // $this->addTodolist($todo);
+                    $this->addTodolist();
                 } elseif ($pilihan == 2) {
-                    // $number = InputHelper::input("Masukkan nomor Todo yang akan dihapus: ");
-                    // $this->removeTodolist($number);
+                    $this->removeTodolist();
                 } elseif ($pilihan == 3) {
                     break;
                 } else {
-                    // echo "Pilihan tidak valid. Silakan pilih kembali." . PHP_EOL;
+                    echo "SALAH NOMOR!" . PHP_EOL;
                 }
             }
         }
