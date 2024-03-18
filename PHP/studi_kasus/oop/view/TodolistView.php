@@ -32,7 +32,7 @@ namespace View {
                     // $number = InputHelper::input("Masukkan nomor Todo yang akan dihapus: ");
                     // $this->removeTodolist($number);
                 } elseif ($pilihan == 3) {
-                    // break;
+                    break;
                 } else {
                     // echo "Pilihan tidak valid. Silakan pilih kembali." . PHP_EOL;
                 }
