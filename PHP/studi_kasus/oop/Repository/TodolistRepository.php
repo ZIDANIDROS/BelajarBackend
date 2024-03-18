@@ -27,7 +27,7 @@ namespace Repository {
                 return false;
             }
 
-            for ($i = $number; $i < sizeof($this->todosist); $i++) {
+            for ($i = $number; $i < sizeof($this->todolist); $i++) {
                 $this->todolist[$i] = $this->todolist[$i + 1];
             }
 
