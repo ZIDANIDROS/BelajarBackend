@@ -20,18 +20,25 @@ namespace View {
 
                 echo "Menu" . PHP_EOL;
                 echo "1. Tambah Todo" . PHP_EOL;
-                echo "2. Tambah Todo" . PHP_EOL;
-                echo "3. Tambah Todo" . PHP_EOL;
+                echo "2. Hapus Todo" . PHP_EOL;
+                echo "3. Keluar" . PHP_EOL;
 
                 $pilihan = InputHelper::input("pilih");
 
                 if ($pilihan == 1) {
-                    $this->addTodolist();
+                    // $todo = InputHelper::input("Masukkan Todo: ");
+                    // $this->addTodolist($todo);
+                } elseif ($pilihan == 2) {
+                    // $number = InputHelper::input("Masukkan nomor Todo yang akan dihapus: ");
+                    // $this->removeTodolist($number);
+                } elseif ($pilihan == 3) {
+                    // break;
                 } else {
-                    $this->removeTodolist();
+                    // echo "Pilihan tidak valid. Silakan pilih kembali." . PHP_EOL;
                 }
             }
         }
+
         function addTodolist(): void
         {
         }
