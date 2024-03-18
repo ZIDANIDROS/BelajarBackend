@@ -32,4 +32,16 @@ function testAddTodolist(): void
     $todolistService->showTodolist();
 }
 
+function testRemoveTodolist(): void
+{
+    $todolistRepository = new TodolistRepositoryImpl();
+
+    $todolistService = new TodolistServiceImpl($todolistRepository);
+    $todolistService->addTodolist("Belajar PHP");
+    $todolistService->addTodolist("Belajar PHP OOP");
+    $todolistService->addTodolist("Belajar PHP DATABASE");
+
+    $todolistService->showTodolist();
+}
+
 testShowTodolist();
