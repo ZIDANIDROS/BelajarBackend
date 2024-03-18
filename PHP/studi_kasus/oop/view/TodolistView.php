@@ -3,6 +3,7 @@
 namespace View {
 
     use Service\TodolistService;
+    use Helper\InputHelper;
 
     class TodolistView
     {
@@ -22,7 +23,13 @@ namespace View {
                 echo "2. Tambah Todo" . PHP_EOL;
                 echo "3. Tambah Todo" . PHP_EOL;
 
-                $pilihan = input("pilih");
+                $pilihan = InputHelper::input("pilih");
+
+                if ($pilihan == 1) {
+                    $this->addTodolist();
+                } else {
+                    $this->removeTodolist();
+                }
             }
         }
         function addTodolist(): void
