@@ -42,6 +42,9 @@ function testRemoveTodolist(): void
     $todolistService->addTodolist("Belajar PHP DATABASE");
 
     $todolistService->showTodolist();
+
+    $todolistService->removeTodolist(1);
+    $todolistService->showTodolist();
 }
 
 testShowTodolist();
