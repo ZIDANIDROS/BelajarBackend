@@ -1,11 +1,17 @@
 <?php
 
-$host = "localhost";
-$port = 3306;
-$database = "belajar_php_database";
-$username = "root";
-$password = "";
+$host       = '127.0.0.1';
+$database   = 'mysql';
+$port       = 3306;
+$user       = 'root';
+$password   = '';
 
-$connection = new PDO("mysql:host=$host;port=$port;dbname=$database", $username, $password);
-echo "Sukses terkoneksi ke database";
+try {
+    $connection = new PDO($database . ":host=" . $host . ';port=' . $port, $user, $password);
+    $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    echo "SUKSES";
+    return $connection;
+} catch (PDOException $e) {
+    echo $e->getMessage();
+}
 
