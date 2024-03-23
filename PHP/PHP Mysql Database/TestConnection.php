@@ -7,7 +7,6 @@ $user       = 'root';
 $password   = '';
 
 
-$connection = new PDO($database . ":host=" . $host . ';port=' . $port, $user, $password);
-echo "SUKSES";
-return $connection;
+return new PDO($database . ":host=" . $host . ';port=' . $port, $user, $password);
+
 
