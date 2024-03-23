@@ -6,7 +6,7 @@ $connection = getConnection();
 
 $sql = <<<SQL
     INSERT INTO tb_penjualan(ID,Name,alamat)
-    VALUES(123,'Husein','hsbahbs');
+    VALUES(124,'zidan','jasndkjabkjs');
 SQL;
 
 $connection->exec($sql);
