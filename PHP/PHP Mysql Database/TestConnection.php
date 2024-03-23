@@ -6,7 +6,6 @@ $port       = 3306;
 $user       = 'root';
 $password   = '';
 
-
 return new PDO($database . ":host=" . $host . ';port=' . $port, $user, $password);
 
 
