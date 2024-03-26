@@ -13,5 +13,4 @@ namespace Config{
             return new \PDO("mysql:host=$host;port=$port;dbname=$database", $user, $password);
         }
     }
-    
 }
