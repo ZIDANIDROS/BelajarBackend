@@ -61,10 +61,7 @@ namespace Repository {
                 return false;
             }
         }
-
-
-
-
+        
         function findAll(): array
         {
             return $this->todolist;
