@@ -64,7 +64,21 @@ namespace Repository {
         
         function findAll(): array
         {
-            return $this->todolist;
+            // return $this->todolist;
+            $sql = 'SELECT id, name from todolist';
+            $statment = $this->connection->prepare($sql);
+            $statment->execute();
+
+            $result = [];
+
+            foreach ($statment as $row) {
+                $todolist = new Todolist();
+                $todolist->setId($row['id']);
+                $todolist->setTodo($row['todo']);
+                $result[] = $todolist;
+            }
+
+            return $result;
         }
     }
 }
