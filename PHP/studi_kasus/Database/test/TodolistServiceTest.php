@@ -41,14 +41,13 @@ function testRemoveTodolist(): void
     $todolistRepository = new TodolistRepositoryImpl($connection);
 
     $todolistService = new TodolistServiceImpl($todolistRepository);
-    $todolistService->addTodolist("Belajar PHP");
-    $todolistService->addTodolist("Belajar PHP OOP");
-    $todolistService->addTodolist("Belajar PHP DATABASE");
-
-    $todolistService->showTodolist();
-
-    $todolistService->removeTodolist(1);
-    $todolistService->showTodolist();
+    
+    echo $todolistService->removeTodolist(6).PHP_EOL;
+    echo $todolistService->removeTodolist(5).PHP_EOL;
+    echo $todolistService->removeTodolist(4).PHP_EOL;
+    echo $todolistService->removeTodolist(3).PHP_EOL;
+    echo $todolistService->removeTodolist(2).PHP_EOL;
+    echo $todolistService->removeTodolist(1).PHP_EOL;
 }
 
-testAddTodolist();
+testRemoveTodolist();
