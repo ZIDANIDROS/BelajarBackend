@@ -2,7 +2,7 @@
 
 class kedua
 {
-    public $a;//property
+    public $a,$b;//property
 
     //method
     public function lol(){
