@@ -11,9 +11,7 @@ class kedua
     //method
     public function lol(){
         echo "apakah kamu sudah makan {$this->namaDepan} {$this->namaBelakang} ?".PHP_EOL;
-    }
-    
-    
+    }    
 }
 
 $a = new kedua("Husein", "Zidan");
