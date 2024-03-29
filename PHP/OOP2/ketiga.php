@@ -4,7 +4,7 @@ class kedua
 {
     public $namaDepan,$namaBelakang;//property
 
-    function __construct($namaDepan,$namaBelakang) {
+    public function __construct($namaDepan,$namaBelakang) {
         $this->namaDepan = $namaDepan;
         $this->namaBelakang = $namaBelakang;
     }
