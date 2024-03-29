@@ -2,15 +2,19 @@
 
 class kedua
 {
-    public $a,$b;//property
+    public $namaDepan,$namaBelakang;//property
 
+    function __construct($namaDepan,$namaBelakang) {
+        $this->namaDepan = $namaDepan;
+        $this->namaBelakang = $namaBelakang;
+    }
     //method
     public function lol(){
-        echo "HAI OOP".PHP_EOL;
+        echo "apakah kamu sudah makan {$this->namaDepan} {$this->namaBelakang} ?".PHP_EOL;
     }
+    
     
 }
 
-$a = new kedua();
-
-var_dump($a);
+$a = new kedua("Husein", "Zidan");
+echo ($a->lol());
