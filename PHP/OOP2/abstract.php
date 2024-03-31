@@ -29,10 +29,10 @@ abstract class Car {
   
   // Create objects from the child classes
   $audi = new audi("Audi");
-  echo $audi->intro();
+  echo $audi->intro() . PHP_EOL;
   
   $volvo = new volvo("Volvo");
-  echo $volvo->intro();
+  echo $volvo->intro() . PHP_EOL;
   
   $citroen = new Citroen("Citroen");
-  echo $citroen->intro();
+  echo $citroen->intro() . PHP_EOL;
