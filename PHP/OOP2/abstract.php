@@ -6,26 +6,26 @@ abstract class Car {
       $this->name = $name;
     }
     abstract public function intro() : string;
-  }
+}
   
   // Child classes
-  class Audi extends Car {
+class Audi extends Car {
     public function intro() : string {
       return "Choose German quality! I'm an $this->name!"; 
     }
-  }
+}
   
-  class Volvo extends Car {
+class Volvo extends Car {
     public function intro() : string {
       return "Proud to be Swedish! I'm a $this->name!"; 
     }
-  }
+}
   
-  class Citroen extends Car {
+class Citroen extends Car {
     public function intro() : string {
       return "French extravagance! I'm a $this->name!"; 
     }
-  }
+}
   
   // Create objects from the child classes
   $audi = new audi("Audi");
