@@ -1,28 +1,48 @@
 <?php
 
-class Buku
+class Mobil
 {
-    public $judul,$author;//property
+    public $nama,$merek,$kecepatanmax,$kecepatanmin,$turbo;//property
 
-    public function __construct($judul,$author) {
-        $this->judul = $judul;
-        $this->author = $author;
+    public function __construct($nama,$merek,$kecepatanmax=0,$kecepatanmin=0,$turbo=false){
+        $this->nama=$nama;
+        $this->merek=$merek;
+        $this->kecepatanmax=$kecepatanmax;
+        $this->kecepatanmin=$kecepatanmin;
+        $this->turbo=$turbo;
     }
-    //method pengembalian
-    public function lol(){
-        echo "ini judul buku {$this->judul} ,ini author {$this->author} ?".PHP_EOL;
+    public function kecepatan($kecepatanmax,$kecepatanmin=0)
+    {
+        $this->kecepatanmax = $kecepatanmax;
+        for ($kecepatanmin=0; $kecepatanmin <= $kecepatanmax; $kecepatanmin++) { 
+            echo "$kecepatanmin MpH". PHP_EOL;
+        }
+    }   
+}
+
+class mobilSport extends Mobil
+{
+    public $nama,$merek,$kecepatanmax,$kecepatanmin,$turbo;//property
+
+    public function __construct($nama,$merek,$kecepatanmax=0,$kecepatanmin=0,$turbo=false){
+        $this->nama=$nama;
+        $this->merek=$merek;
+        $this->kecepatanmax=$kecepatanmax;
+        $this->kecepatanmin=$kecepatanmin;
+        $this->turbo=$turbo;
+    }
+
+    public function kecepatan($kecepatanmax=0,$kecepatanmin=0)
+    {
+        $this->kecepatanmax = $kecepatanmax;
+        for (; $kecepatanmin <= $kecepatanmax; $kecepatanmin++) { 
+            echo "$kecepatanmin MpH". PHP_EOL;
+            if ($kecepatanmax == 120 && $this->turbo==true){
+                echo "Turbo Menyala";
+            }
+        }
     }
 }
 
-class Cetak
-{
-    public function cetak(Buku $a){
-        echo "ini judul buku {$a->judul} ,authornya adalah {$a->author} ".PHP_EOL;
-    }    
-}
-
-$buku1 = new Buku("lelepali","Zidan");
-
-$infoProduk1 = new Cetak();
-$infoProduk1->cetak($buku1);
-
+$mobilzidan = new mobilSport("Galardo","lamborghini",250,turbo:true);
+$mobilzidan->kecepatan($mobilzidan);
