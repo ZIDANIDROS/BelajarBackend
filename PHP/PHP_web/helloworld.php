@@ -1,4 +1,6 @@
 <?php
 
-echo "Hello World <br/>" . PHP_EOL ;
-echo "Hello World" . PHP_EOL ;
+echo "Hello World <br/>";
+echo "Hello World";
+
+//tanpa ".PHP_EOL;"
