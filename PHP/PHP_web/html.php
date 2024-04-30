@@ -2,6 +2,7 @@
 $title = "hello world from title";
 $body = "hello world from body";
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
