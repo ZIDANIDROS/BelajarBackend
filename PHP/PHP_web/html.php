@@ -11,6 +11,6 @@ $body = "hello world from body";
     <title><?php echo $title;?></title>
 </head>
 <body>
-<?php echo $body;?>
+<h1><?php echo $body;?></h1>
 </body>
 </html>
