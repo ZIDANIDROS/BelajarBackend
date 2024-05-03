@@ -5,14 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
-    <h1>register</h1>
+<body style="Background-color : black">
+    <h1 style="color : white">register</h1>
     <form action="post.php" method="post">
         <label>
-            <input type="text" name="firstname" id="">
+            <input type="text" name="firstname">
         </label>
         <br/>
-        <input type="submit" name="" id="">
+        <label>
+            <input type="text" name="lastname">
+        </label>
+        <br/>
+        <input type="submit" value="Register">
     </form>
 </body>
 </html>
