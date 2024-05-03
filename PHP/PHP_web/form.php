@@ -9,7 +9,7 @@
     <h1 style="color : white">register</h1>
     <form action="post.php" method="post">
         <label>
-            <input type="text" name="firstname">
+            
         </label>
         <br/>
         <label>
