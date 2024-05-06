@@ -1,1 +1,4 @@
 # Belajar Backend
+
+- PHP
+- JAVA
