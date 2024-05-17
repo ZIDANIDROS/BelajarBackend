@@ -3,3 +3,4 @@
 - PHP
 - JAVA
 - Java Script
+- Laravel
