@@ -1,6 +1,8 @@
 # Belajar Backend
 
 - PHP
+- Laravel
 - JAVA
 - Java Script
-- Laravel
+- Golang
+- C++
