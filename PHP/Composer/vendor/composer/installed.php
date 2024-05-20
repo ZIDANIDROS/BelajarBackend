@@ -3,7 +3,7 @@
         'name' => 'huseinzidan/belajar-composer',
         'pretty_version' => 'dev-master',
         'version' => 'dev-master',
-        'reference' => '82c858e50be9ae8e7efd9ff48ef63e56e7b436a4',
+        'reference' => '3956ba19075d0ccd7a30e43f08dcdeb2dee85dcb',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -13,7 +13,7 @@
         'huseinzidan/belajar-composer' => array(
             'pretty_version' => 'dev-master',
             'version' => 'dev-master',
-            'reference' => '82c858e50be9ae8e7efd9ff48ef63e56e7b436a4',
+            'reference' => '3956ba19075d0ccd7a30e43f08dcdeb2dee85dcb',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
