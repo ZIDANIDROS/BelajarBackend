@@ -1,11 +1,11 @@
 {
-    "name": "huseinzidan/belajar-composer",
-    "description": "belajar php composer",
-    "type": "project",
-    "autoload": {
-        "psr-4": {
-            "Huseinzidan\\BelajarComposer\\": "src/"
-        }
-    },
-    "require": {}
+  "name": "huseinzidan/belajar-composer",
+  "description": "belajar php composer",
+  "type": "project",
+  "autoload": {
+    "psr-4": {
+      "huseinzidan\\": "src/"
+    }
+  },
+  "require": {}
 }
