@@ -7,5 +7,7 @@
       "huseinzidan\\": "src/"
     }
   },
-  "require": {}
+  "require": {
+    "monolog/monolog": "3.6.0"
+  }
 }
