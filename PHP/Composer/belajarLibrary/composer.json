@@ -1,17 +1,19 @@
 {
-    "name": "huseinzidan/belajar-library",
-    "description": "Library Composer Hello",
-    "type": "library",
-    "autoload": {
-        "psr-4": {
-            "Huseinzidan\\BelajarLibrary\\": "src/"
-        }
-    },
-    "authors": [
-        {
-            "name": "husein zidan",
-            "email": "zidan.idros14@gmail.com"
-        }
-    ],
-    "require": {}
+  "name": "huseinzidan/belajarlibrary",
+  "description": "Library Composer Hello",
+  "type": "library",
+  "autoload": {
+    "psr-4": {
+      "Huseinzidan\\BelajarLibrary\\": "src/"
+    }
+  },
+  "authors": [
+    {
+      "name": "husein zidan",
+      "email": "zidan.idros14@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=8.0"
+  }
 }
