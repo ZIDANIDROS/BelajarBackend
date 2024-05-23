@@ -8,6 +8,6 @@ class Customer {
     }
 
     public function sayHello(string $name): string{
-        return "Hello $name, my name is $this->name"
+        return "Hello $name, my name is $this->name";
     }
 }
