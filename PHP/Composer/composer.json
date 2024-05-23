@@ -9,5 +9,9 @@
   },
   "require": {
     "monolog/monolog": "3.6.0"
+  },
+  "scripts": {
+    "run-server": "php -S localhost:8080",
+    "hello": "echo 'Hello World'"
   }
 }
