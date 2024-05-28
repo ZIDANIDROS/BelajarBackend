@@ -1,0 +1,55 @@
+@startuml DC
+class Anak {
+  - String nama
+  - Date tanggalLahir
+  - String alamat
+  - OrangTuaWali orangTua
+  + void daftarAnak()
+  + void perbaruiData()
+}
+
+class OrangTuaWali {
+  - String nama
+  - String alamat
+  - String nomorTelepon
+  - List<Anak> anak
+  + void daftarOrangTua()
+  + void perbaruiData()
+}
+
+class Staf {
+  - String nama
+  - String posisi
+  - String jadwalKerja
+  + void perbaruiData()
+}
+
+class Admin {
+  + void kelolaJadwal()
+  + void kelolaDataStaf()
+  + void kelolaDataOrangTua()
+}
+
+class Jadwal {
+  - Date tanggal
+  - String kegiatan
+  - List<Staf> staf
+  + void kelolaJadwal()
+}
+
+class Laporan {
+  - Date tanggal
+  - String jenis
+  - String isi
+  + void lihatLaporan()
+}
+
+Anak --> "1" OrangTuaWali : orangTua
+OrangTuaWali --> "*" Anak : anak
+Jadwal --> "*" Staf : staf
+Admin --> Jadwal : kelola
+Admin --> Staf : kelola
+Admin --> OrangTuaWali : kelola
+Staf --> Laporan : buat
+OrangTuaWali --> Laporan : lihat
+@enduml

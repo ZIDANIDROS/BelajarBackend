@@ -1,6 +1,6 @@
-@startuml hahahhah
+@startuml ERD
 entity "Anak" as Anak {
-  +anak_id: INT <<Primary>>
+  +anak_id: INT <<PK>>
   nama: VARCHAR
   tanggal_lahir: DATE
   alamat: VARCHAR

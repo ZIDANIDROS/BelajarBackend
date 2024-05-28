@@ -1,0 +1,31 @@
+@startuml usecase
+left to right direction
+actor OrangTuaWali as OTW
+actor Staf as S
+actor Admin as A
+
+rectangle DaycareSystem {
+  usecase "Daftar Anak" as UC1
+  usecase "Periksa Jadwal" as UC2
+  usecase "Kelola Jadwal" as UC3
+  usecase "Lihat Laporan Kehadiran" as UC4
+  usecase "Lihat Laporan Kegiatan" as UC5
+  usecase "Perbarui Data Anak" as UC6
+  usecase "Perbarui Data Staf" as UC7
+  usecase "Kelola Data Orang Tua/Wali" as UC8
+}
+
+OTW --> UC1
+OTW --> UC2
+OTW --> UC4
+OTW --> UC5
+
+S --> UC2
+S --> UC4
+S --> UC5
+
+A --> UC3
+A --> UC6
+A --> UC7
+A --> UC8
+@enduml
