@@ -6,3 +6,5 @@
 - Java Script
 - Golang
 - C++
+- matematics
+- DSA
