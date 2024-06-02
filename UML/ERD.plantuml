@@ -34,8 +34,8 @@ entity "Laporan" as Laporan {
   isi: TEXT
 }
 
-Anak }|..|| OrangTuaWali : "belongs to"
-Jadwal ||--o{ Staf : "is managed by"
-Staf ||--o{ Laporan : "creates"
-OrangTuaWali ||--o{ Laporan : "views"
+Anak }|..|| OrangTuaWali : "dari"
+Jadwal ||--o{ Staf : "di managed oleh"
+Staf ||--o{ Laporan : "membuat"
+OrangTuaWali ||--o{ Laporan : "melihat"
 @enduml
