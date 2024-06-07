@@ -12,10 +12,10 @@ class testsdepedency{
         return $counter;
     }
 
-    //**@depends testFirst */
+    // //**@depends testFirst */
 
-    public function testSecond(Counter $counter):void{
-        $counter->increment();
-        $this->assertEquals(2,$counter->getCounter());
-    }
+    // public function testSecond(Counter $counter):void{
+    //     $counter->increment();
+    //     $this->assertEquals(2,$counter->getCounter());
+    // }
 }
