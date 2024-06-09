@@ -1,7 +1,7 @@
 # Belajar Backend
 
+<h1>Language</h1>
 <hr/>
-Language
 - PHP
 - Laravel
 - JAVA
@@ -9,6 +9,7 @@ Language
 - Golang
 - C++
 
-##Algorithm
+<h1>Algorithm</h1>
+<hr/>
 - matematics
 - DSA
