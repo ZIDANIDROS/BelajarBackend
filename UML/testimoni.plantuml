@@ -1,0 +1,31 @@
+@startuml ummatkristiani
+left to right direction
+
+actor Pelanggan
+actor Tukang_Cukur
+actor Administrasi
+
+rectangle Sultan_Barber {
+    Pelanggan --> (Registrasi/Masuk)
+    Pelanggan --> (Melakukan Pemesanan)
+    Pelanggan --> (Melihat Model Rambut)
+    Pelanggan --> (Melihat Antrian)
+    Pelanggan --> (Membeli Produk)
+    Pelanggan --> (Melihat Riwayat)
+    Pelanggan --> (Bayar pesanan/produk)
+    
+    (Registrasi/Masuk) -[hidden]-> (Verify Password/data diri)
+    (Registrasi/Masuk) --> (Verify Password/data diri) : include
+    (Verify Password/data diri) --> (Verify Password/data diri) : extends
+
+    Tukang_Cukur --> (Melihat isi pesanan pelanggan)
+    
+    Administrasi --> (Mengelola promo)
+    Administrasi --> (Mengelola keanggotaan)
+    Administrasi --> (Mengelola inventaris barber)
+    Administrasi --> (Melacak kerusakan dan pembelian)
+    Administrasi --> (Menentukan gaji)
+    Administrasi --> (Menghitung jumlah pelanggan)
+}
+
+@enduml
