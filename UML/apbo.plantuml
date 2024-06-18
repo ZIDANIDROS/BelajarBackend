@@ -1,0 +1,130 @@
+@startuml
+package "Manajemen" {
+    class Manager {
+        - ID_Manager: int
+        - Nama_Manager: String
+        - Email_Manager: String
+        - No_Telephone_Manager: String
+        + membuatPromo(): void
+        + mengelolaInventaris(): void
+        + mengelolaPembayaran(): void
+    }
+}
+
+package "Promo" {
+    class Promo {
+        - ID_Promo: int
+        - Deskripsi_Promo: String
+        - Diskon_Promo: float
+        - Tgl_Mulai_Promo: Date
+        - Tgl_Selesai_Promo: Date
+        + buatPromo(): void
+        + perbaruiPromo(): void
+        + hapusPromo(): void
+    }
+}
+
+package "Inventaris" {
+    class Inventaris {
+        - ID_Inventaris: int
+        - Nama_Inventaris: String
+        - Jumlah_Inventaris: int
+        - Status_Kerusakan_Inventaris: String
+        + tambahInventaris(): void
+        + perbaruiInventaris(): void
+        + hapusInventaris(): void
+    }
+}
+
+package "Capster" {
+    class Capster {
+        - ID_Capster: int
+        - Nama_Capster: String
+        - Spesialisasi_Capster: String
+        - Rating_Capster: float
+        - Ketersediaan_Capster: boolean
+        + buatAntrian(): void
+        + perbaruiAntrian(): void
+        + hapusAntrian(): void
+    }
+}
+
+package "Customer" {
+    class Customer {
+        - ID_Customer: int
+        - Nama_Customer: String
+        - Email_Customer: String
+        - No_Telephone_Customer: String
+        - Alamat_Customer: String
+        - Kecamatan: String
+        - Kota: String
+        - Kode_Pos: String
+        - Preferensi_Customer: String
+        - Status_Keanggotaan_Customer: String
+        + buatReservasi(): void
+        + perbaruiReservasi(): void
+        + hapusReservasi(): void
+    }
+}
+
+package "Reservasi" {
+    class Reservasi {
+        - ID_Reservasi: int
+        - ID_Pelanggan: int
+        - ID_Capster: int
+        - Tanggal: Date
+        - Jam: Time
+        - Waktu_Reservasi: DateTime
+        - Status_Reservasi: String
+        + buatReservasi(): void
+        + perbaruiReservasi(): void
+        + batalkanReservasi(): void
+    }
+}
+
+package "Model_Rambut" {
+    class Model_Rambut {
+        - ID_Model: int
+        - Nama_Model: String
+        - Kategori_Model: String
+        - Deskripsi_Model: String
+        - Harga_Model: float
+        + buatModel(): void
+        + perbaruiModel(): void
+        + hapusModel(): void
+    }
+}
+
+package "Antrian" {
+    class Antrian {
+        - ID_Antrian: int
+        - Nomor_Antrian: int
+        - ID_Pelanggan: int
+        - Status_Antrian: String
+        + buatAntrian(): void
+        + perbaruiAntrian(): void
+        + hapusAntrian(): void
+    }
+}
+
+package "Pembayaran" {
+    class Pembayaran {
+        - ID_Pembayaran: int
+        - ID_Pelanggan: int
+        - Jumlah_Pembayaran: float
+        - Tanggal_Pembayaran: Date
+        - Metode_Pembayaran: String
+        + prosesPembayaran(): void
+        + konfirmasiPembayaran(): void
+        + batalkanPembayaran(): void
+    }
+}
+
+Manager "membuat" --> Promo
+Manager "mengelola" --> Inventaris
+Manager "mengelola" --> Pembayaran
+Customer "melakukan" --> Pembayaran
+Customer "membuat" --> Reservasi
+Customer "memilih" --> Model_Rambut
+Reservasi "menangani" --> Capster
+Reservasi "terkait" --> Antrian
