@@ -11,3 +11,4 @@
 <h1>Algorithm</h1>
 - matematics
 - DSA
+- Dynamic programing
