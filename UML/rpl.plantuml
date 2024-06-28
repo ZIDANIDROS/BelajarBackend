@@ -1,70 +1,28 @@
 @startuml
-!define RECTANGLE class
 
-RECTANGLE Server {
-    eth0
-    eth1
+package "Menentukan Narasumber" as Populasi {
+
 }
 
-RECTANGLE "Router 1\n(Main Link)" as Router1 {
-    eth0
-    eth1
+package "Menentukan Jenis Survei" as JenisSurvei {
+ 
 }
 
-RECTANGLE "Router 2\n(Backup Link)" as Router2 {
-    eth0
-    eth1
+package "Merancang Pertanyaan" as Merancang {
+    
 }
 
-RECTANGLE "Mikrotik Router" as Mikrotik {
+package "Membagikan Survei" as Membagikan {
+    
 }
 
-RECTANGLE "Switch 1" as Switch1 {
-    eth0
+package "Menganalisis Hasil Survei" as Menganalisis {
+    
 }
 
-RECTANGLE "Switch 2" as Switch2 {
-    eth0
-}
+Populasi -down-> JenisSurvei
+JenisSurvei -down-> Merancang
+Merancang -down-> Membagikan
+Membagikan -down-> Menganalisis
 
-RECTANGLE "Switch 3" as Switch3 {
-    eth0
-}
-
-RECTANGLE "Switch 4" as Switch4 {
-    eth0
-}
-
-Server -down-> Router1 : eth0
-Server -down-> Router2 : eth1
-Router1 -down-> Mikrotik : eth0
-Router2 -down-> Mikrotik : eth1
-
-Mikrotik -down-> Switch1 : eth0
-Mikrotik -down-> Switch2 : eth1
-Mikrotik -down-> Switch3 : eth2
-Mikrotik -down-> Switch4 : eth3
-
-note right of Server
-  - Terhubung ke dua router
-  - Menggunakan dua interface jaringan
-end note
-
-note right of Router1
-  - Jalur utama
-end note
-
-note right of Router2
-  - Jalur cadangan
-end note
-
-note right of Mikrotik
-  - Mengelola failover
-  - Menggunakan Netwatch untuk memonitor konektivitas
-end note
-
-note left of Mikrotik
-  Ping (Netwatch)
-  Routes Failover
-end note
 @enduml
