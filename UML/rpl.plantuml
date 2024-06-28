@@ -1,132 +1,17 @@
 @startuml
-package "Manajemen" {
-    class Manajemen {
-        - informasiReservasi: String
-        - informasiRekapPembayaran: String
-        + kelolaReservasi(): void
-        + kelolaPembayaran(): void
-        + buatLaporanReservasi(): String
-        + buatLaporanPembayaran(): String
-    }
-}
 
-package "Pelanggan" {
-    class Pelanggan {
-        - idPelanggan: int
-        - nama: String
-        - alamat: String
-        - nomorTelepon: String
-        + daftarPelanggan(): void
-        + perbaruiInformasi(): void
-        + hapusAkun(): void
-    }
+actor Customer
+actor Admin
 
-    class DataPelanggan {
-        - idPelanggan: int
-        - nama: String
-        - alamat: String
-        - nomorTelepon: String
-        + simpanData(): void
-        + perbaruiData(): void
-        + hapusData(): void
-    }
-}
+Customer -> (Browse Products)
+Customer -> (Add Product to Cart)
+Customer -> (Remove Product from Cart)
+Customer -> (View Cart)
+Customer -> (Checkout)
+Customer -> (View Order History)
 
-package "Reservasi" {
-    class Reservasi {
-        - idReservasi: int
-        - tanggalReservasi: Date
-        - waktuReservasi: Time
-        - statusReservasi: String
-        + buatReservasi(): void
-        + perbaruiReservasi(): void
-        + batalkanReservasi(): void
-    }
-
-    class AntrianPijat {
-        - idAntrian: int
-        - waktuAntrian: Time
-        - statusAntrian: String
-        + buatAntrian(): void
-        + perbaruiAntrian(): void
-        + hapusAntrian(): void
-    }
-
-    class QNA {
-        - idQNA: int
-        - pertanyaan: String
-        - jawaban: String
-        + ajukanPertanyaan(): void
-        + jawabPertanyaan(): void
-        + perbaruiJawaban(): void
-    }
-
-    class Pembayaran {
-        - idPembayaran: int
-        - jumlah: float
-        - tanggalPembayaran: Date
-        - statusPembayaran: String
-        + prosesPembayaran(): void
-        + konfirmasiPembayaran(): void
-        + batalkanPembayaran(): void
-    }
-}
-
-package "Database" {
-    class DatabasePelanggan {
-        - dataPelanggan: List<DataPelanggan>
-        + tambahData(): void
-        + perbaruiData(): void
-        + hapusData(): void
-        + cariData(id: int): DataPelanggan
-    }
-
-    class DatabaseReservasi {
-        - dataReservasi: List<Reservasi>
-        + tambahData(): void
-        + perbaruiData(): void
-        + hapusData(): void
-        + cariData(id: int): Reservasi
-    }
-
-    class DatabaseQNA {
-        - dataQNA: List<QNA>
-        + tambahData(): void
-        + perbaruiData(): void
-        + hapusData(): void
-        + cariData(id: int): QNA
-    }
-
-    class DatabasePembayaran {
-        - dataPembayaran: List<Pembayaran>
-        + tambahData(): void
-        + perbaruiData(): void
-        + hapusData(): void
-        + cariData(id: int): Pembayaran
-    }
-}
-
-package "Pegawai" {
-    class Pegawai {
-        - idPegawai: int
-        - nama: String
-        - posisi: String
-        + kelolaAntrianPijat(): void
-        + perbaruiInformasi(): void
-        + hapusPegawai(): void
-    }
-}
-
-Manajemen --> Reservasi : mengelola
-Manajemen --> Pembayaran : mengelola
-Pelanggan --> Reservasi : melakukan
-Pelanggan --> Pembayaran : melakukan
-Reservasi --> DatabaseReservasi : menyimpan
-Reservasi --> AntrianPijat : mengatur
-Reservasi --> QNA : menyimpan
-Pembayaran --> DatabasePembayaran : menyimpan
-QNA --> DatabaseQNA : menyimpan
-Pelanggan --> DatabasePelanggan : menyimpan
-Pegawai --> AntrianPijat : mengelola
+Admin -> (Manage Products)
+Admin -> (Manage Orders)
+Admin -> (Manage Users)
 
 @enduml
