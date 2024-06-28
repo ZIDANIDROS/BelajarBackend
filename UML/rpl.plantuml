@@ -1,6 +1,6 @@
 @startuml
 
-package "Menentukan Narasumber" as Populasi {
+package "Menentukan Lokasi dan Narasumber" as Populasi {
 
 }
 
