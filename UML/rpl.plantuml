@@ -1,17 +1,53 @@
 @startuml
+!define RECTANGLE class
 
-actor Customer
-actor Admin
+RECTANGLE Server {
+    eth0
+    eth1
+}
 
-Customer -> (Browse Products)
-Customer -> (Add Product to Cart)
-Customer -> (Remove Product from Cart)
-Customer -> (View Cart)
-Customer -> (Checkout)
-Customer -> (View Order History)
+RECTANGLE "Router 1\n(Main Link)" as Router1 {
+    eth0
+    eth1
+}
 
-Admin -> (Manage Products)
-Admin -> (Manage Orders)
-Admin -> (Manage Users)
+RECTANGLE "Router 2\n(Backup Link)" as Router2 {
+    eth0
+    eth1
+}
 
+RECTANGLE "Mikrotik Router" as Mikrotik {
+}
+
+RECTANGLE Internet
+
+Server -down-> Router1 : eth0
+Server -down-> Router2 : eth1
+Router1 -down-> Mikrotik : eth0
+Router2 -down-> Mikrotik : eth1
+Mikrotik -down-> Internet
+
+note right of Server
+  - Terhubung ke dua router
+  - Menggunakan dua interface jaringan
+end note
+
+note right of Router1
+  - Jalur utama
+end note
+
+note right of Router2
+  - Jalur cadangan
+end note
+
+note right of Mikrotik
+  - Mengelola failover
+  - Menggunakan Netwatch untuk memonitor konektivitas
+end note
+
+note left of Mikrotik
+  Ping (Netwatch)
+  Routes Failover
+end note
 @enduml
+
