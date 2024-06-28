@@ -19,13 +19,31 @@ RECTANGLE "Router 2\n(Backup Link)" as Router2 {
 RECTANGLE "Mikrotik Router" as Mikrotik {
 }
 
-RECTANGLE Internet
+RECTANGLE "Switch 1" as Switch1 {
+    eth0
+}
+
+RECTANGLE "Switch 2" as Switch2 {
+    eth0
+}
+
+RECTANGLE "Switch 3" as Switch3 {
+    eth0
+}
+
+RECTANGLE "Switch 4" as Switch4 {
+    eth0
+}
 
 Server -down-> Router1 : eth0
 Server -down-> Router2 : eth1
 Router1 -down-> Mikrotik : eth0
 Router2 -down-> Mikrotik : eth1
-Mikrotik -down-> Internet
+
+Mikrotik -down-> Switch1 : eth0
+Mikrotik -down-> Switch2 : eth1
+Mikrotik -down-> Switch3 : eth2
+Mikrotik -down-> Switch4 : eth3
 
 note right of Server
   - Terhubung ke dua router
@@ -50,4 +68,3 @@ note left of Mikrotik
   Routes Failover
 end note
 @enduml
-
