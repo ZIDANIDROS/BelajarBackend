@@ -12,3 +12,4 @@
 - matematics
 - DSA
 - Dynamic programing
+- Machine Learning
