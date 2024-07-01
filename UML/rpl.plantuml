@@ -1,28 +1,30 @@
 @startuml
+actor Pelanggan
+actor Pegawai
 
-package "Menentukan Lokasi dan Narasumber" as Populasi {
+rectangle "Manajemen" {
+  Pelanggan --> DataPel
+  DataPel --> DBPel
+  DBPel --> DataPel
 
+  Pelanggan --> Reservasi
+  Reservasi --> DBReservasi
+  DBReservasi --> Reservasi
+
+  Pelanggan --> Pembayaran
+  Pembayaran --> DBPembayaran
+  DBPembayaran --> Pembayaran
+
+  AntrianPijat --> DBReservasi
+  DBReservasi --> AntrianPijat
+  AntrianPijat --> Pelanggan
+
+  Pegawai --> AntrianPijat
+
+  QandN --> DBQandN
+  DBQandN --> QandN
+  QandN --> Reservasi
+
+  Manajemen -> Reservasi
 }
-
-package "Menentukan Jenis Survei" as JenisSurvei {
- 
-}
-
-package "Merancang Pertanyaan" as Merancang {
-    
-}
-
-package "Membagikan Survei" as Membagikan {
-    
-}
-
-package "Menganalisis Hasil Survei" as Menganalisis {
-    
-}
-
-Populasi -down-> JenisSurvei
-JenisSurvei -down-> Merancang
-Merancang -down-> Membagikan
-Membagikan -down-> Menganalisis
-
 @enduml
