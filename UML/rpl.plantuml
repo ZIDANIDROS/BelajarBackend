@@ -1,30 +1,53 @@
 @startuml
-actor Pelanggan
-actor Pegawai
+start
+:Mulai;
 
-rectangle "Manajemen" {
-  Pelanggan --> DataPel
-  DataPel --> DBPel
-  DBPel --> DataPel
+:Pelanggan;
+-> [*] Reservasi;
+:Reservasi;
+-> DatabaseReservasi;
+:Database Reservasi;
+-> Reservasi;
+:Reservasi;
+-> Pelanggan;
+:Konfirmasi reservasi;
+:Kembali ke Pelanggan;
 
-  Pelanggan --> Reservasi
-  Reservasi --> DBReservasi
-  DBReservasi --> Reservasi
+:Pelanggan;
+-> Pembayaran;
+:Pembayaran;
+-> DatabasePembayaran;
+:Database Pembayaran;
+-> Pembayaran;
+:Pembayaran;
+-> Pelanggan;
+:Konfirmasi pembayaran;
+:Kembali ke Pelanggan;
 
-  Pelanggan --> Pembayaran
-  Pembayaran --> DBPembayaran
-  DBPembayaran --> Pembayaran
+:Antrian Pijat;
+-> DatabaseReservasi;
+:Verifikasi reservasi;
+-> Antrian Pijat;
+:Konfirmasi reservasi;
+-> Pelanggan;
+:Konfirmasi antrian;
+:Kembali ke Pelanggan;
 
-  AntrianPijat --> DBReservasi
-  DBReservasi --> AntrianPijat
-  AntrianPijat --> Pelanggan
+:Pegawai;
+-> Antrian Pijat;
+:Antrian Pijat;
+-> Pegawai;
+:Konfirmasi antrian oleh pegawai;
+:Kembali ke Pegawai;
 
-  Pegawai --> AntrianPijat
+:Q&A;
+-> DatabaseQandA;
+:Simpan pertanyaan/keluhan;
+-> Q&A;
+:Konfirmasi simpan;
+-> Reservasi;
+:Informasi pertanyaan/keluhan;
+:Kembali ke Q&A;
 
-  QandN --> DBQandN
-  DBQandN --> QandN
-  QandN --> Reservasi
-
-  Manajemen -> Reservasi
-}
+stop
 @enduml
