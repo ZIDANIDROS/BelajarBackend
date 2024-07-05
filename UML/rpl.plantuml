@@ -1,53 +1,35 @@
 @startuml
 start
+
 :Mulai;
 
-:Pelanggan;
--> [*] Reservasi;
-:Reservasi;
--> DatabaseReservasi;
-:Database Reservasi;
--> Reservasi;
-:Reservasi;
--> Pelanggan;
-:Konfirmasi reservasi;
-:Kembali ke Pelanggan;
+:Pelanggan melakukan permintaan reservasi;
+-> :Reservasi memeriksa ketersediaan;
+-> :Reservasi menyimpan data ke Database Reservasi;
+-> :Database Reservasi mengonfirmasi penyimpanan data;
+-> :Reservasi mengonfirmasi reservasi ke Pelanggan;
 
-:Pelanggan;
--> Pembayaran;
-:Pembayaran;
--> DatabasePembayaran;
-:Database Pembayaran;
--> Pembayaran;
-:Pembayaran;
--> Pelanggan;
-:Konfirmasi pembayaran;
-:Kembali ke Pelanggan;
+:Pelanggan melakukan permintaan pembayaran;
+-> :Pembayaran memproses permintaan;
+-> :Pembayaran menyimpan data ke Database Pembayaran;
+-> :Database Pembayaran mengonfirmasi penyimpanan data;
+-> :Pembayaran mengonfirmasi pembayaran ke Pelanggan;
 
-:Antrian Pijat;
--> DatabaseReservasi;
-:Verifikasi reservasi;
--> Antrian Pijat;
-:Konfirmasi reservasi;
--> Pelanggan;
-:Konfirmasi antrian;
-:Kembali ke Pelanggan;
+:Pegawai menambahkan pelanggan ke antrian pijat;
+-> :Antrian Pijat menyimpan data ke Database Reservasi;
+-> :Database Reservasi mengonfirmasi penyimpanan data;
+-> :Antrian Pijat mengonfirmasi antrian ke Pegawai;
 
-:Pegawai;
--> Antrian Pijat;
-:Antrian Pijat;
--> Pegawai;
-:Konfirmasi antrian oleh pegawai;
-:Kembali ke Pegawai;
+:Pelanggan menambahkan antrian pijat;
+-> :Antrian Pijat mengonfirmasi antrian ke Pelanggan;
 
-:Q&A;
--> DatabaseQandA;
-:Simpan pertanyaan/keluhan;
--> Q&A;
-:Konfirmasi simpan;
--> Reservasi;
-:Informasi pertanyaan/keluhan;
-:Kembali ke Q&A;
+:Q&A menerima pertanyaan/keluhan;
+-> :Q&A menyimpan data ke Database Q&A;
+-> :Database Q&A mengonfirmasi penyimpanan data;
+-> :Q&A mengonfirmasi ke Reservasi;
+-> :Reservasi mengonfirmasi pertanyaan/keluhan;
+
+:Konfirmasi selesai;
 
 stop
 @enduml
