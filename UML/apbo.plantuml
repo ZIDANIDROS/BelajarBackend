@@ -1,130 +1,98 @@
 @startuml
-package "Manajemen" {
-    class Manager {
-        - ID_Manager: int
-        - Nama_Manager: String
-        - Email_Manager: String
-        - No_Telephone_Manager: String
-        + membuatPromo(): void
-        + mengelolaInventaris(): void
-        + mengelolaPembayaran(): void
-    }
+class BarberCart {
+    - barberCartID : int
+    - customerID : int
+    - quantity : int
+    - dateAdd : date
+    + menuGayaRambut()
+    + pemotong(value:string)
+    + gayaRambutPopuler(value:enum)
+    + produk()
+    + reservasiLayanan()
 }
 
-package "Promo" {
-    class Promo {
-        - ID_Promo: int
-        - Deskripsi_Promo: String
-        - Diskon_Promo: float
-        - Tgl_Mulai_Promo: Date
-        - Tgl_Selesai_Promo: Date
-        + buatPromo(): void
-        + perbaruiPromo(): void
-        + hapusPromo(): void
-    }
+class Orders {
+    - orderID : int
+    - jadwalBuat : date
+    - jadwalPesanan : date
+    - customerName : string
+    - customerID : int
+    - status : bool
+    - creditCardInfo : string
+    - barberID : int
+    - barberCartID : int
+    + ketersediaanTempat(value:int)
+    + ketersediaanParkir(value:int)
+    + reservasi()
+    + pemrosesanPembayaran()
+    + nomorAntrian(value:int)
 }
 
-package "Inventaris" {
-    class Inventaris {
-        - ID_Inventaris: int
-        - Nama_Inventaris: String
-        - Jumlah_Inventaris: int
-        - Status_Kerusakan_Inventaris: String
-        + tambahInventaris(): void
-        + perbaruiInventaris(): void
-        + hapusInventaris(): void
-    }
+class OrderDetails {
+    - orderID : int
+    - modelID : int
+    - unitCost : int
+    - subtotal : float
+    + kalkulasiHarga()
 }
 
-package "Capster" {
-    class Capster {
-        - ID_Capster: int
-        - Nama_Capster: String
-        - Spesialisasi_Capster: String
-        - Rating_Capster: float
-        - Ketersediaan_Capster: boolean
-        + buatAntrian(): void
-        + perbaruiAntrian(): void
-        + hapusAntrian(): void
-    }
+class User {
+    - nomorTelepon : int
+    - password : string
+    - loginStatus : string
+    - registerDate : date
+    + verifyLogin() : bool
 }
 
-package "Customer" {
-    class Customer {
-        - ID_Customer: int
-        - Nama_Customer: String
-        - Email_Customer: String
-        - No_Telephone_Customer: String
-        - Alamat_Customer: String
-        - Kecamatan: String
-        - Kota: String
-        - Kode_Pos: String
-        - Preferensi_Customer: String
-        - Status_Keanggotaan_Customer: String
-        + buatReservasi(): void
-        + perbaruiReservasi(): void
-        + hapusReservasi(): void
-    }
+class Customer {
+    - userName : string
+    - addres : string
+    - age : int
+    - email : string
+    - barberinfo : string
+    - antrianPelanggan : int
+    - jadwalPesanan : date
+    + Login()
+    + LogOut()
+    + setName(value:string)
+    + getName(value:string)
+    + updateProfile()
 }
 
-package "Reservasi" {
-    class Reservasi {
-        - ID_Reservasi: int
-        - ID_Pelanggan: int
-        - ID_Capster: int
-        - Tanggal: Date
-        - Jam: Time
-        - Waktu_Reservasi: DateTime
-        - Status_Reservasi: String
-        + buatReservasi(): void
-        + perbaruiReservasi(): void
-        + batalkanReservasi(): void
-    }
+class Employee {
+    - employeeName : string
+    - email : string
+    + setName(value:string)
+    + getName(value:string)
+    + keahlian(value:enum)
+    + absenPagi()
+    + absenPulang()
 }
 
-package "Model_Rambut" {
-    class Model_Rambut {
-        - ID_Model: int
-        - Nama_Model: String
-        - Kategori_Model: String
-        - Deskripsi_Model: String
-        - Harga_Model: float
-        + buatModel(): void
-        + perbaruiModel(): void
-        + hapusModel(): void
-    }
+class Manager {
+    - kodeManager
+    + kegiatan()
+    + updateAntrian()
 }
 
-package "Antrian" {
-    class Antrian {
-        - ID_Antrian: int
-        - Nomor_Antrian: int
-        - ID_Pelanggan: int
-        - Status_Antrian: String
-        + buatAntrian(): void
-        + perbaruiAntrian(): void
-        + hapusAntrian(): void
-    }
+class Capster {
+    - kodeBarber
+    + kegiatan()
 }
 
-package "Pembayaran" {
-    class Pembayaran {
-        - ID_Pembayaran: int
-        - ID_Pelanggan: int
-        - Jumlah_Pembayaran: float
-        - Tanggal_Pembayaran: Date
-        - Metode_Pembayaran: String
-        + prosesPembayaran(): void
-        + konfirmasiPembayaran(): void
-        + batalkanPembayaran(): void
-    }
+class BarberInfo {
+    - barberID : int
+    - status : bool
+    + transaksi()
+    + riwayatPesanan()
 }
 
-Manager "membuat" --> Promo
-Manager "mengelola" --> Inventaris
-Manager "mengelola" --> Pembayaran
-Customer "melakukan" --> Pembayaran
-Customer "membuat" --> Reservasi
-Customer "memilih" --> Model_Rambut
-Reservasi "menangani" --> Capster
-Reservasi "terkait" --> Antrian
+Customer <|-- User : Inheritance
+Employee <|-- Manager : Abstract
+Employee <|-- Capster : Abstract
+Customer --> Orders : Object
+Customer --> BarberCart : Object
+Orders --> OrderDetails
+Orders --> BarberInfo
+
+@enduml
