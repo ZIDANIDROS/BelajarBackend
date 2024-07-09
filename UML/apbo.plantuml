@@ -1,90 +1,99 @@
 @startuml
-
-entity Manager {
-    +ID_Manager: int
-    +Nama_Manager: string
-    +Email_Manager: string
-    +No_Telephone_Manager: string
+class BarberCart {
+    - barberCartID : int
+    - customerID : int
+    - quantity : int
+    - dateAdd : date
+    + menuGayaRambut()
+    + pemotong(value:string)
+    + gayaRambutPopuler(value:enum)
+    + produk()
+    + reservasiLayanan()
 }
 
-entity Pembayaran {
-    +ID_Pembayaran: int
-    +Jumlah_Pembayaran: float
-    +Tanggal_Pembayaran: date
-    +Metode_Pembayaran: string
+class Orders {
+    - orderID : int
+    - jadwalBuat : date
+    - jadwalPesanan : date
+    - customerName : string
+    - customerID : int
+    - status : bool
+    - creditCardInfo : string
+    - barberID : int
+    - barberCartID : int
+    + ketersediaanTempat(value:int)
+    + ketersediaanParkir(value:int)
+    + reservasi()
+    + pemrosesanPembayaran()
+    + nomorAntrian(value:int)
 }
 
-entity Customer {
-    +ID_Customer: int
-    +Nama_Customer: string
-    +Email_Customer: string
-    +No_Telephone_Customer: string
-    +Alamat_Customer: string
-    +Kecamatan: string
-    +Kota: string
-    +Kode_Pos: string
-    +Preferensi_Customer: string
-    +Status_Keanggotaan_Customer: string
+class OrderDetails {
+    - orderID : int
+    - modelID : int
+    - unitCost : int
+    - subtotal : float
+    + kalkulasiHarga()
 }
 
-entity Reservasi {
-    +ID_Reservasi: int
-    +Waktu_Reservasi: datetime
-    +Status_Reservasi: string
+class User {
+    - nomorTelepon : int
+    - password : string
+    - loginStatus : string
+    - registerDate : date
+    + verifyLogin() : bool
 }
 
-entity Capster {
-    +ID_Capster: int
-    +Nama_Capster: string
-    +Spesialisasi_Capster: string
-    +Rating_Capster: float
-    +Ketersediaan_Capster: string
+class Customer {
+    - userName : string
+    - addres : string
+    - age : int
+    - email : string
+    - barberinfo : string
+    - antrianPelanggan : int
+    - jadwalPesanan : date
+    + Login()
+    + LogOut()
+    + setName(value:string)
+    + getName(value:string)
+    + updateProfile()
 }
 
-entity Model_Rambut {
-    +ID_Model: int
-    +Nama_Model: string
-    +Kategori_Model: string
-    +Deskripsi_Model: string
-    +Harga_Model: float
+class Employee {
+    - employeeName : string
+    - email : string
+    + setName(value:string)
+    + getName(value:string)
+    + keahlian(value:enum)
+    + absenPagi()
+    + absenPulang()
 }
 
-entity Antrian {
-    +ID_Antrian: int
-    +Nomor_Antrian: int
-    +Status_Antrian: string
+class Manager {
+    - kodeManager
+    + kegiatan()
+    + updateAntrian()
 }
 
-entity Inventaris {
-    +ID_Inventaris: int
-    +Nama_Inventaris: string
-    +Status_Kerusakan_Inventaris: string
-    +Jumlah_Inventaris: int
+class Capster {
+    - kodeBarber
+    + kegiatan()
 }
 
-entity Promo {
-    +ID_Promo: int
-    +Deskripsi_Promo: string
-    +Diskon_Promo: float
-    +Tgl_Mulai_Promo: date
-    +Tgl_Selesai_Promo: date
+class BarberInfo {
+    - barberID : int
+    - status : bool
+    + transaksi()
+    + riwayatPesanan()
 }
 
-Manager --|> Pembayaran : "Mengelola"
-Manager --|> Inventaris : "Mengelola"
-Manager --|> Promo : "Membuat"
-
-Customer --|> Pembayaran : "Melakukan"
-Customer --|> Reservasi : "Membuat"
-Customer --|> Model_Rambut : "Memilih"
-
-Reservasi --|> Capster : "ID_Capster"
-Reservasi --|> Model_Rambut : "ID_Model"
-Reservasi --|> Customer : "ID_Pelanggan"
-
-Antrian --|> Customer : "ID_Pelanggan"
-Antrian --|> Antrian : "ID_Antrian"
-
-Capster --|> Reservasi : "Menangani"
+User <|-- Customer : Inheritance
+User <|-- Employee : Inheritance
+Employee <|-- Manager : Abstract
+Employee <|-- Capster : Abstract
+Customer --> Orders : Object
+Customer --> BarberCart : Object
+Orders --> OrderDetails
+Orders --> BarberInfo
 
 @enduml
