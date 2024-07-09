@@ -87,7 +87,8 @@ class BarberInfo {
     + riwayatPesanan()
 }
 
-Customer <|-- User : Inheritance
+User <|-- Customer : Inheritance
+User <|-- Employee : Inheritance
 Employee <|-- Manager : Abstract
 Employee <|-- Capster : Abstract
 Customer --> Orders : Object
