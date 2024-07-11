@@ -91,9 +91,9 @@ User <|-- Customer : Inheritance
 User <|-- Employee : Inheritance
 Employee <|-- Manager : Abstract
 Employee <|-- Capster : Abstract
-Customer --> Orders : Object
-Customer --> BarberCart : Object
-Orders --> OrderDetails
-Orders --> BarberInfo
+Customer *-- Orders : Composition
+Customer o-- BarberCart : Aggregation
+Orders --> OrderDetails : "contains"
+Orders --> BarberInfo : "involves"
 
 @enduml
