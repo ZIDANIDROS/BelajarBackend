@@ -3,8 +3,9 @@ include 'db.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['task'])) {
     $task = $_POST['task'];
-    $sql = "INSERT INTO tasks (task) VALUES ('$task')";
-    if ($conn->query($sql) === TRUE) {
+    $stmt = $conn->prepare("INSERT INTO tasks (task) VALUES (?)");
+    $stmt->bind_param("s", $task);
+    if ($stmt->execute()) {
         header("Location: index.php");
         exit();
     } else {
