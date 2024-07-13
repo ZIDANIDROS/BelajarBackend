@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
 include 'db.php';
 include 'server.php';
 ?>
@@ -18,11 +18,13 @@ include 'server.php';
     <ul>
         <?php 
             while ($row = $result->fetch_assoc()): ?>
-            <li><?php echo $row['task']; ?> (<?php echo $row['status']; ?>)
+            <li>
+                <?php 
+                echo $row['task']; ?> (<?php echo $row['status']; ?>)
                 <a href="delete.php?id=<?php echo $row['id']; ?>">Delete</a>
                 <a href="complete.php?id=<?php echo $row['id']; ?>">Complete</a>
             </li><?php 
             endwhile; ?>
     </ul>
 </body>
-</html>
+</html> -->
