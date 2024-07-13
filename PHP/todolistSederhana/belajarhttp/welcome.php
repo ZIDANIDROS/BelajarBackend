@@ -1,3 +1,22 @@
+<?php
+
+// Memeriksa jika form dikirim dengan metode POST
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    // Mengambil data dari array $_POST
+    if(isset($_POST['name'])) {
+        $name = htmlspecialchars($_POST['name']);
+    }
+    
+    if(isset($_POST['email'])) {
+        $email = htmlspecialchars($_POST['email']);
+    }
+
+    if(isset($_POST['kegiatan'])){
+        $kegiatan = htmlspecialchars($_POST['kegiatan']);
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -5,20 +24,23 @@
     <link rel="stylesheet" href="/../gaya.css">
 </head>
 <body>
+    <?php if ($_SERVER['REQUEST_METHOD'] == 'POST' && !empty($name) && !empty($email)): ?>
+        <?php
+        // Menampilkan data yang diterima
+        echo "<h1>Welcome, $name!<br></h1>";
+        echo "Your email address is: $email";
+        ?>
+    <?php endif ?>
 
-<?php
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    // Mengambil data dari array $_POST
-    $name = htmlspecialchars($_POST['name']);
-    $email = htmlspecialchars($_POST['email']);
-    
-    // Menampilkan data yang diterima
-    echo "Welcome, $name!<br>";
-    echo "Your email address is: $email";
-} else {
-    echo "Form was not submitted properly.";
-}
-?>
+    <form action="welcome.php" method="POST">
+        <input type="text" name="kegiatan" placeholder="Masukan kegiatan">
+        <button type="submit">GAS!</button>
+    </form>
 
+    <ul>
+        <?php if (!empty($kegiatan)): ?>
+            <li><?php echo htmlspecialchars($kegiatan); ?></li>
+        <?php endif; ?>
+    </ul>
 </body>
 </html>
