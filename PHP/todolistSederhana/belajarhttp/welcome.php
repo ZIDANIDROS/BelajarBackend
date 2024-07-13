@@ -1,20 +1,28 @@
 <?php
+session_start();
 
-// Memeriksa jika form dikirim dengan metode POST
+$name = "";
+$email = "";
+$kegiatan = "";
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    // Mengambil data dari array $_POST
-    if(isset($_POST['name'])) {
-        $name = htmlspecialchars($_POST['name']);
-    }
+    // Mengambil data dari array $_POST dan menyimpannya ke sesi
+    $_SESSION['name'] = htmlspecialchars($_POST['name']);
+    $_SESSION['email'] = htmlspecialchars($_POST['email']);
     
-    if(isset($_POST['email'])) {
-        $email = htmlspecialchars($_POST['email']);
+    if(isset($_POST['kegiatan'])){
+        $_SESSION['kegiatan'] = htmlspecialchars($_POST['kegiatan']);
     }
 
-    if(isset($_POST['kegiatan'])){
-        $kegiatan = htmlspecialchars($_POST['kegiatan']);
-    }
+    // Redirect untuk mencegah form resubmission
+    header("Location: welcome.php");
+    exit();
 }
+
+// Mengambil data dari sesi
+$name = isset($_SESSION['name']) ? $_SESSION['name'] : "";
+$email = isset($_SESSION['email']) ? $_SESSION['email'] : "";
+$kegiatan = isset($_SESSION['kegiatan']) ? $_SESSION['kegiatan'] : "";
 ?>
 
 <!DOCTYPE html>
@@ -24,13 +32,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <link rel="stylesheet" href="/../gaya.css">
 </head>
 <body>
-    <?php if ($_SERVER['REQUEST_METHOD'] == 'POST' && !empty($name) && !empty($email)): ?>
+    <?php if (!empty($name) && !empty($email)): ?>
         <?php
         // Menampilkan data yang diterima
-        echo "<h1>Welcome, $name!<br></h1>";
+        echo "Welcome, $name!<br>";
         echo "Your email address is: $email";
         ?>
-    <?php endif ?>
+    <?php endif; ?>
 
     <form action="welcome.php" method="POST">
         <input type="text" name="kegiatan" placeholder="Masukan kegiatan">
