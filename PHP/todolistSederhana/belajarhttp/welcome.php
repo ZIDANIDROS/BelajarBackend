@@ -35,12 +35,14 @@ $kegiatan = isset($_SESSION['kegiatan']) ? $_SESSION['kegiatan'] : "";
     <?php if (!empty($name) && !empty($email)): ?>
         <?php
         // Menampilkan data yang diterima
-        echo "Welcome, $name!<br>";
+        echo "<h1>Welcome, $name!</h1><br>";
         echo "Your email address is: $email";
         ?>
     <?php endif; ?>
 
     <form action="welcome.php" method="POST">
+        <input type="hidden" name="name" placeholder="Enter your name" value="<?php echo htmlspecialchars($name); ?>">
+        <input type="hidden" name="email" placeholder="Enter your email" value="<?php echo htmlspecialchars($email); ?>">
         <input type="text" name="kegiatan" placeholder="Masukan kegiatan">
         <button type="submit">GAS!</button>
     </form>
