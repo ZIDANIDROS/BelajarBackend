@@ -6,7 +6,6 @@ if (isset($_POST['login'])) {
     $pw = $_POST["pw"];
 }
 
-
 ?>
 
 <!DOCTYPE html>
