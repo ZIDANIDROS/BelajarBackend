@@ -1,3 +1,10 @@
+<?php
+
+include "service/Databest.php";
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,7 +18,7 @@
     <?php include "layout/header.html" ?>
     <a href="index.php">Home</a>
     <h3>DAFTAR AKUN</h3>
-    <form action="">
+    <form action="signup.php" method="POST">
         <input type="text" placeholder="username" name="username">
         <input type="password" placeholder="password" name="password">
         <button type="submit">daftar sekarang</button>
