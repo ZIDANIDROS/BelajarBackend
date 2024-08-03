@@ -14,16 +14,20 @@ if (isset($_POST["signup"])) {
     $username = $_POST["username"];
     $pw = $_POST["pw"];
 
-    try {
-        $sql = "INSERT INTO users (username,password) VALUES ('$username','$pw')";
+    if ($_POST["username"] && $_POST["pw"]) {
+        try {
+            $sql = "INSERT INTO users (username,password) VALUES ('$username','$pw')";
 
-        if ($db->query($sql)) {
-            $signup_mssage = "Daftar sukses";
-        } else {
-            $signup_mssage = "gagal, silahkan muncul lagi";
+            if ($db->query($sql)) {
+                $signup_mssage = "Daftar sukses";
+            } else {
+                $signup_mssage = "gagal, silahkan muncul lagi";
+            }
+        } catch (mysqli_sql_exception) {
+            $signup_mssage = "Username sudah ada";
         }
-    } catch (mysqli_sql_exception) {
-        $signup_mssage = "Username sudah ada";
+    } else {
+        $signup_mssage = "data kosong";
     }
     $db->close();
 }
