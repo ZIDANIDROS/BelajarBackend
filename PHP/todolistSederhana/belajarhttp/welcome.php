@@ -27,13 +27,15 @@ $kegiatan = isset($_SESSION['kegiatan']) ? $_SESSION['kegiatan'] : "";
 
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Welcome</title>
     <link rel="stylesheet" href="/../gaya.css">
 </head>
+
 <body>
     <?php if (!empty($name) && !empty($email)): ?>
-        <?php
+    <?php
         // Menampilkan data yang diterima
         echo "<h1>Welcome, $name!</h1><br>";
         echo "Your email address is: $email";
@@ -42,15 +44,17 @@ $kegiatan = isset($_SESSION['kegiatan']) ? $_SESSION['kegiatan'] : "";
 
     <form action="welcome.php" method="POST">
         <input type="hidden" name="name" placeholder="Enter your name" value="<?php echo htmlspecialchars($name); ?>">
-        <input type="hidden" name="email" placeholder="Enter your email" value="<?php echo htmlspecialchars($email); ?>">
+        <input type="hidden" name="email" placeholder="Enter your email"
+            value="<?php echo htmlspecialchars($email); ?>">
         <input type="text" name="kegiatan" placeholder="Masukan kegiatan">
         <button type="submit">GAS!</button>
     </form>
 
     <ul>
         <?php if (!empty($kegiatan)): ?>
-            <li><?php echo htmlspecialchars($kegiatan); ?></li>
+        <li><?php echo htmlspecialchars($kegiatan); ?></li>
         <?php endif; ?>
     </ul>
 </body>
+
 </html>
