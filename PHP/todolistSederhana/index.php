@@ -1,30 +1,28 @@
-<!-- <?php
-include 'db.php';
-include 'server.php';
+<?php
+include 'service/db.php';
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <title>To-Do List</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
 </head>
+
 <body>
-    <h1>To-Do List</h1>
-    <form method="POST" action="">
-        <input type="text" name="task" placeholder="Enter a new task">
-        <button type="submit">Add Task</button>
-    </form>
+    <h1>Selamat Datang di dashboard</h1>
+
+    <h2>TodoList $nama yang telah anda buat</h2>
 
     <ul>
-        <?php 
-            while ($row = $result->fetch_assoc()): ?>
-            <li>
-                <?php 
-                echo $row['task']; ?> (<?php echo $row['status']; ?>)
-                <a href="delete.php?id=<?php echo $row['id']; ?>">Delete</a>
-                <a href="complete.php?id=<?php echo $row['id']; ?>">Complete</a>
-            </li><?php 
-            endwhile; ?>
+        <li></li>
     </ul>
+
+    <br />
+
+    <?php include 'layout/footer.html' ?>
 </body>
-</html> -->
+
+</html>
