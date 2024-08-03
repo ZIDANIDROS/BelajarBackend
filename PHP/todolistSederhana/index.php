@@ -1,28 +1,18 @@
-<?php
-include 'service/db.php';
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
+    <title>Home</title>
 </head>
 
-<body>
-    <h1>Selamat Datang di dashboard</h1>
+<body style="background-color: black;color:aliceblue;">
+    <h1>SELAMAT DATANG DI HOMEPAGE</h1>
+    <?php include 'layout/header.html'; ?>
 
-    <h2>TodoList $nama yang telah anda buat</h2>
 
-    <ul>
-        <li></li>
-    </ul>
-
-    <br />
-
-    <?php include 'layout/footer.html' ?>
+    <?php include 'layout/footer.html'; ?>
 </body>
 
 </html>
