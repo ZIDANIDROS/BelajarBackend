@@ -1,3 +1,9 @@
+<?php
+
+session_start();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,7 +14,7 @@
 </head>
 
 <body style="background-color: black;color:aliceblue;">
-    <h1>Selamat Datang $nama</h1>
+    <h1>Selamat Datang <?= $_SESSION['username'] ?></h1>
 </body>
 
 </html>
