@@ -1,5 +1,6 @@
 <?php
 include 'service/db.php';
+session_start();
 
 $login_massage = "";
 
@@ -13,6 +14,8 @@ if (isset($_POST['login'])) {
     $result = $sql->get_result();
 
     if ($result->num_rows > 0) {
+        $data = $result->fetch_assoc();
+        $_SESSION['username'] = $data['username'];
         header('Location: dashboard.php');
     } else {
         $login_massage = "username dan password salah";
