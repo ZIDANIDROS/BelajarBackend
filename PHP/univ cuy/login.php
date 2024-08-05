@@ -20,6 +20,7 @@ if (isset($_POST['login'])) {
         $_SESSION["username"] = $data["username"];
         $_SESSION["is_login"] = true;
         header("location: dashboard.php");
+        exit();
     } else {
         $login_mssage = "Gagal Masuk";
     }
