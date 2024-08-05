@@ -12,7 +12,7 @@ if (isset($_POST['login'])) {
     $username = $_POST["username"];
     $pw = $_POST["pw"];
 
-    $sql = "SELECT * from users where username='$username' AND password='$pw'";
+    $sql = "SELECT * from users where userne='$username' AND password='$pw'";
     $result = $db->query($sql);
 
     if ($result->num_rows == 1) {
