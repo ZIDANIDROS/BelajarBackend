@@ -10,7 +10,9 @@ class Person
     {
         $this->name = $name;
         $this->addres = $addres;
-        $this->addres = $addres;
+        $this->country = $country;
+
+        echo "Object person $this->name is construct" . PHP_EOL;
     }
 
     function sayHello1($name)
@@ -25,5 +27,10 @@ class Person
         } else {
             echo "sayhello2 Hello $name , my name is  {$this->name}" . PHP_EOL;
         }
+    }
+
+    function __destruct()
+    {
+        echo "Object person $this->name is destruct" . PHP_EOL;
     }
 }
